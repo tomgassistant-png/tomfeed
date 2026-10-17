@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curiosities Feed</title>
+  <style>
+    :root {
+      --bg: #F8F9FA;
+      --text: #1F2937;
+      --muted: #6B7280;
+      --link: #2563EB;
+      --link-hover: #1D4ED8;
+      --border: #E5E7EB;
+      --headline: #111827;
+      --headline-hover: #2563EB;
+      --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 130%; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+      padding: 2rem 1rem 4rem;
+    }
+    .wrap { max-width: 1040px; margin: 0 auto; }
+    header {
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+      padding-bottom: 1.25rem;
+    }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--headline);
+    }
+    h1 a {
+      color: inherit;
+      text-decoration: none;
+    }
+    h1 a:hover {
+      color: var(--headline-hover);
+      text-decoration: underline;
+    }
+    .sub {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+    .sub code {
+      color: var(--text);
+      background: #EEF2F7;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+    }
+    .save-hint { color: var(--muted); }
+    .layout {
+      align-items: start;
+      display: grid;
+      gap: 2.5rem;
+      grid-template-columns: minmax(0, 1fr) 12rem;
+    }
+    .sidebar {
+      font-size: 0.72rem;
+    }
+    .tasks {
+      margin-bottom: 1.25rem;
+    }
+    .task-list {
+      margin-bottom: 1.1rem;
+    }
+    .task-list:last-child {
+      margin-bottom: 0;
+    }
+    .links {
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+    .links ul {
+      list-style: none;
+    }
+    .links li {
+      line-height: 1.35;
+      margin-bottom: 0.55rem;
+    }
+    .links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .links a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+    .task-list-name {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.45rem;
+      text-transform: uppercase;
+    }
+    .task-list-name a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .task-list-name a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+    .tasks ul {
+      list-style: none;
+    }
+    .tasks li {
+      line-height: 1.35;
+      margin-bottom: 0.45rem;
+    }
+    .tasks a {
+      color: var(--text);
+      text-decoration: none;
+    }
+    .tasks a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+    .tasks li span {
+      color: var(--muted);
+    }
+    .task-empty {
+      color: var(--muted);
+    }
+    .sites-manage {
+      border-top: 1px solid var(--border);
+      margin-top: 0.65rem;
+      padding-top: 0.55rem;
+    }
+    .sites-manage a {
+      color: var(--muted);
+      font-size: 0.68rem;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      text-transform: lowercase;
+    }
+    .sites-manage a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+    @media (max-width: 900px) {
+      .layout {
+        gap: 1.25rem;
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 0.25rem;
+        order: -1;
+        padding-bottom: 1rem;
+      }
+      .links {
+        border-top: none;
+        padding-top: 0.85rem;
+      }
+      .task-list {
+        margin-bottom: 0.85rem;
+      }
+      .tasks ul {
+        column-gap: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .tasks li {
+        margin-bottom: 0.35rem;
+        max-width: 100%;
+      }
+      .links ul {
+        column-gap: 1.25rem;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .links li {
+        margin-bottom: 0.35rem;
+      }
+    }
+    .feed { margin-bottom: 1rem; }
+    .item {
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.25rem;
+      padding-bottom: 1.25rem;
+    }
+    .item.off-leash-pending {
+      border-left: 3px solid #D97706;
+      padding-left: 0.75rem;
+      background: #FFFBEB;
+    }
+    .item.off-leash-pending .headline a {
+      color: #92400E;
+    }
+    .pending-badge {
+      color: #B45309;
+      white-space: nowrap;
+      font-weight: 600;
+      text-transform: lowercase;
+    }
+    .item.saved {
+      opacity: 0.52;
+    }
+    .item.saved .headline a {
+      font-weight: 500;
+      color: var(--muted);
+    }
+    .saved-badge {
+      color: var(--muted);
+      white-space: nowrap;
+      font-style: italic;
+    }
+    .headline {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 0.4rem;
+    }
+    .headline a {
+      color: var(--headline);
+      text-decoration: none;
+    }
+    .headline a:hover { color: var(--headline-hover); text-decoration: underline; }
+    .meta {
+      font-size: 0.78rem;
+      word-break: break-all;
+    }
+    .url { color: var(--muted); text-decoration: none; }
+    .url:hover { color: var(--link-hover); text-decoration: underline; }
+    .save {
+      color: var(--link);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .save:hover { color: var(--link-hover); text-decoration: underline; }
+    .source, time { color: var(--muted); }
+    time.rel-time { white-space: nowrap; }
+    .item-body {
+      white-space: pre-wrap;
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: var(--text, inherit);
+      max-width: 42rem;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.75rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1><a href="https://t.me/TomGOpenClaw_bot?text=refresh%20tomfeed%20%E2%80%94%20run%20full%20update%20%28watchlists%20%2B%20recent%20curiosities%20search%2C%20last%202%E2%80%934%20weeks%2C%20no%20old%20backfill%29" target="_blank" rel="noopener noreferrer" title="Refresh tomfeed via Telegram">Curiosities Feed</a></h1>
+      <p class="sub">Newest first · from <code>curiosities.md</code> · generated 2026-10-17 02:05 UTC · <span class="save-hint">📌 Save → Telegram → Google Tasks</span></p>
+    </header>
+    <div class="layout">
+    <main class="feed">
+    <article class="item" data-item-url="https://wttr.in/Herzliya,Israel">
+      <h2 class="headline"><a href="https://wttr.in/Herzliya,Israel" target="_blank" rel="noopener noreferrer">🌧️ Herzliya: Light rain shower, 22°C now (22–24°C today)</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-17T02:05:09Z">just now</time> · <span class="source">wttr.in</span> · <a href="https://wttr.in/Herzliya,Israel" class="url" target="_blank" rel="noopener noreferrer">https://wttr.in/Herzliya,Israel</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.google.com/finance/quote/USD-ILS">
+      <h2 class="headline"><a href="https://www.google.com/finance/quote/USD-ILS" target="_blank" rel="noopener noreferrer">📈 S&amp;P 500 7,659 (-1.09%) · Nasdaq 26,140 (-2.15%) · SPCX $146.03 (-1.74%) · WTI $99.04 (+1.09%) · USD/ILS ₪3.095</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-17T02:05:09Z">just now</time> · <span class="source">Yahoo Finance / Frankfurter</span> · <a href="https://www.google.com/finance/quote/USD-ILS" class="url" target="_blank" rel="noopener noreferrer">https://www.google.com/finance/quote/USD-ILS</a></div>
+    </article>
+    <article class="item" data-item-url="https://x.com/realErikDPrince/status/2110390323314647343">
+      <h2 class="headline"><a href="https://x.com/realErikDPrince/status/2110390323314647343" target="_blank" rel="noopener noreferrer">Off Leash update 14 October 2026</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-14T15:20:36Z">2 days ago</time> · <span class="source">X · Erik Prince (Off Leash)</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//x.com/realErikDPrince/status/2110390323314647343%20%E2%80%94%20Off%20Leash%20update%2014%20October%202026" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://x.com/realErikDPrince/status/2110390323314647343" class="url" target="_blank" rel="noopener noreferrer">https://x.com/realErikDPrince/status/2110390323314647343</a></div>
+      <div class="item-body">Off Leash update 14 October 2026
+
+IRAN
+•Two senior Iranian officials told Reuters the IRGC is stepping up its assault on Hormuz shipping traffic as part of a campaign to keep oil prices high ahead of U.S. midterm elections so American voters will punish the party of the president who started the war.
+•The IRGC’s targeting abilities had been severely diminished by U.S. strikes on its radar and monitoring systems over the summer, but Tehran has since apparently developed some clever workarounds, like dispatching unarmed spotters in small boats to report potential targets and their positions.
+•As a result, Iran’s attacks on commercial vessels have reached their highest level of the war, with eight strikes between Sunday and yesterday. Windward (a maritime tracking firm) counted 16 outbound vessels transiting the Strait in the same period (plus 4-6 dark transits), implying that Iran attacked around half the vessels that left the Persian Gulf. By comparison, Windward estimated that Iran hit only ~2% of transiting ships from July through September.
+•As Pres. Trump has noted, some oil is still getting out of the Gulf, but that’s largely because of an unsustainable U.S. military operation to escort ships. It’s also extremely pricy oil, because risk has pushed maritime insurance premiums skywards.
+
+SAUDI ARABIA
+•After Saudi strikes targeted Houthi-run oil facilities in Yemen, the Houthis retaliated with strikes on the Kingdom’s largest company (by a factor of 16!), Aramco.
+•A Houthi attack on Aramco’s headquarters in Dhahran set a building ablaze, but the company said it was “a limited fire” and reported no injuries.
+
+UKRAINE
+•Ukraine’s state electricity company announced “new power cuts” resulting from Russian attacks on power plants this week.
+•U.S. officials anonymously told the NYT that the energy ceasefire Pres. Trump announced on Sunday covers oil refineries but not power plants, which could then be included in a broader follow-on truce – assuming this one goes well.
+•If true, Russia’s strikes on Ukrainian power plants technically don’t violate Trump’s energy ceasefire (which neither Russia nor Ukraine have confirmed they agreed to anyway). But it would make it a bad deal for Ukraine, which has no fully functional oil refineries (and only one that partly functions) but relies on its power plants to heat homes and run businesses.
+•Pres. Zelensky said Ukraine received no warnings this week about incoming ballistic missiles from the Western intelligence partners who usually sound alarms in advance. Other Ukrainian officials later clarified that the lack of early warning wasn’t a case of neglectful allies but rather due to technical issues and / or Russia’s use of hard-to-spot missiles.
+
+FALKLANDS
+•British Foreign Secretary Ed Miliband signed off on a big new oil drilling project near the Falkland Islands, fueling a long-simmering dispute with Argentina over the archipelago, which Argentina also claims (and calls the Malvinas).
+•Argentina quickly asked an international maritime tribunal to intervene to “preserve Argentina’s rights.”
+•That’s unlikely to stop the project from moving forward towards production in 2028: the tribunal’s rulings are legally binding, but it has no way to enforce them if a country declines to comply – as the UK surely will.</div>
+    </article>
+    <article class="item" data-item-url="https://www.youtube.com/watch?v=_b3LfMflIGs">
+      <h2 class="headline"><a href="https://www.youtube.com/watch?v=_b3LfMflIGs" target="_blank" rel="noopener noreferrer">▶️ CoreWeave Crash, AI Trade Cracks, Anthropic IPO Red Flags, Bill Gates Doomer</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-17T02:00:02Z">5 minutes ago</time> · <span class="source">YouTube · All-In Podcast</span> · <a href="https://t.me/TomGOpenClaw_bot?text=watch%20https%3A//www.youtube.com/watch%3Fv%3D_b3LfMflIGs%20%E2%80%94%20CoreWeave%20Crash%2C%20AI%20Trade%20Cracks%2C%20Anthropic%20IPO%20Red%20Flags%2C%20Bill%20Gates%20Doomer" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Watch later)">📌 Save</a> · <a href="https://www.youtube.com/watch?v=_b3LfMflIGs" class="url" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=_b3LfMflIGs</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.youtube.com/watch?v=RMfQ8DPHQQ0">
+      <h2 class="headline"><a href="https://www.youtube.com/watch?v=RMfQ8DPHQQ0" target="_blank" rel="noopener noreferrer">▶️ Every Ideology Starts as a Book Club — Duncan Umphrey</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-16T19:05:03Z">7 hours ago</time> · <span class="source">YouTube · The Students</span> · <a href="https://t.me/TomGOpenClaw_bot?text=watch%20https%3A//www.youtube.com/watch%3Fv%3DRMfQ8DPHQQ0%20%E2%80%94%20Every%20Ideology%20Starts%20as%20a%20Book%20Club%20%E2%80%94%20Duncan%20Umphrey" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Watch later)">📌 Save</a> · <a href="https://www.youtube.com/watch?v=RMfQ8DPHQQ0" class="url" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=RMfQ8DPHQQ0</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.wandervogel.art/p/marginalia-in-search-of-a-new-mythology">
+      <h2 class="headline"><a href="https://www.wandervogel.art/p/marginalia-in-search-of-a-new-mythology" target="_blank" rel="noopener noreferrer">Marginalia: In Search of a New Mythology</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-16T21:12:09Z">4 hours ago</time> · <span class="source">Substack · Wandervogel</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//www.wandervogel.art/p/marginalia-in-search-of-a-new-mythology%20%E2%80%94%20Marginalia%3A%20In%20Search%20of%20a%20New%20Mythology" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://www.wandervogel.art/p/marginalia-in-search-of-a-new-mythology" class="url" target="_blank" rel="noopener noreferrer">https://www.wandervogel.art/p/marginalia-in-search-of-a-new-mythology</a></div>
+    </article>
+    <article class="item" data-item-url="https://newsletter.amitsegal.net/p/its-noon-in-israel-something-is-coming">
+      <h2 class="headline"><a href="https://newsletter.amitsegal.net/p/its-noon-in-israel-something-is-coming" target="_blank" rel="noopener noreferrer">Something Is Coming for Tehran</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-16T11:01:44Z">15 hours ago</time> · <span class="source">Substack · It&#x27;s Noon In Israel</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//newsletter.amitsegal.net/p/its-noon-in-israel-something-is-coming%20%E2%80%94%20Something%20Is%20Coming%20for%20Tehran" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://newsletter.amitsegal.net/p/its-noon-in-israel-something-is-coming" class="url" target="_blank" rel="noopener noreferrer">https://newsletter.amitsegal.net/p/its-noon-in-israel-something-is-coming</a></div>
+    </article>
+    <article class="item" data-item-url="https://hannahspier.substack.com/p/she-killed-her-boyfriend-heres-how">
+      <h2 class="headline"><a href="https://hannahspier.substack.com/p/she-killed-her-boyfriend-heres-how" target="_blank" rel="noopener noreferrer">She Killed Her Boyfriend. Here’s How to Spot Performative Emotion</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-16T07:52:39Z">18 hours ago</time> · <span class="source">Substack · Psychobabble</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//hannahspier.substack.com/p/she-killed-her-boyfriend-heres-how%20%E2%80%94%20She%20Killed%20Her%20Boyfriend.%20Here%E2%80%99s%20How%20to%20Spot%20Performative%20Emotion" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://hannahspier.substack.com/p/she-killed-her-boyfriend-heres-how" class="url" target="_blank" rel="noopener noreferrer">https://hannahspier.substack.com/p/she-killed-her-boyfriend-heres-how</a></div>
+    </article>
+    <article class="item" data-item-url="https://jmarriott.substack.com/p/why-the-bronze-age-collapsed-did">
+      <h2 class="headline"><a href="https://jmarriott.substack.com/p/why-the-bronze-age-collapsed-did" target="_blank" rel="noopener noreferrer">Why the bronze age collapsed, did Jesus rise from the dead?, indecent medieval sculpture, are smartphones destroying love?</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-16T05:30:46Z">20 hours ago</time> · <span class="source">Substack · Cultural Capital</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//jmarriott.substack.com/p/why-the-bronze-age-collapsed-did%20%E2%80%94%20Why%20the%20bronze%20age%20collapsed%2C%20did%20Jesus%20rise%20from%20the%20dead%3F%2C%20indecent%20medieval%20sculpture%2C%20are%20smartphones%20destroying%20love%3F" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://jmarriott.substack.com/p/why-the-bronze-age-collapsed-did" class="url" target="_blank" rel="noopener noreferrer">https://jmarriott.substack.com/p/why-the-bronze-age-collapsed-did</a></div>
+    </article>
+    <article class="item" data-item-url="https://janeanson.com/the-quiet-success-of-jc-meyou">
+      <h2 class="headline"><a href="https://janeanson.com/the-quiet-success-of-jc-meyou" target="_blank" rel="noopener noreferrer">The Quiet Success of JC Meyou</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-16T02:37:59Z">23 hours ago</time> · <span class="source">Jane Anson · Inside Bordeaux</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//janeanson.com/the-quiet-success-of-jc-meyou%20%E2%80%94%20The%20Quiet%20Success%20of%20JC%20Meyou" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://janeanson.com/the-quiet-success-of-jc-meyou" class="url" target="_blank" rel="noopener noreferrer">https://janeanson.com/the-quiet-success-of-jc-meyou</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.effort.news/nasa">
+      <h2 class="headline"><a href="https://www.effort.news/nasa" target="_blank" rel="noopener noreferrer">The Anti-Space Space Club.</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-16T00:00:00Z">1 day ago</time> · <span class="source">Effort</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//www.effort.news/nasa%20%E2%80%94%20The%20Anti-Space%20Space%20Club." class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://www.effort.news/nasa" class="url" target="_blank" rel="noopener noreferrer">https://www.effort.news/nasa</a></div>
+    </article>
+    <article class="item" data-item-url="https://aeon.co/essays/the-politics-of-masculinity-at-the-end-of-the-roman-republic">
+      <h2 class="headline"><a href="https://aeon.co/essays/the-politics-of-masculinity-at-the-end-of-the-roman-republic" target="_blank" rel="noopener noreferrer">How to be a (Roman) man</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-16T12:00:00Z">14 hours ago</time> · <span class="source">Aeon</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//aeon.co/essays/the-politics-of-masculinity-at-the-end-of-the-roman-republic%20%E2%80%94%20How%20to%20be%20a%20%28Roman%29%20man" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://aeon.co/essays/the-politics-of-masculinity-at-the-end-of-the-roman-republic" class="url" target="_blank" rel="noopener noreferrer">https://aeon.co/essays/the-politics-of-masculinity-at-the-end-of-the-roman-republic</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.lesswrong.com/posts/xFxmqkjLNa2Bvs7cw/projection-sampling-preserves-capabilities-but-diminishes">
+      <h2 class="headline"><a href="https://www.lesswrong.com/posts/xFxmqkjLNa2Bvs7cw/projection-sampling-preserves-capabilities-but-diminishes" target="_blank" rel="noopener noreferrer">Projection sampling preserves capabilities but diminishes gains from alignment fine-tuning</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-16T12:00:00Z">14 hours ago</time> · <span class="source">LessWrong</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//www.lesswrong.com/posts/xFxmqkjLNa2Bvs7cw/projection-sampling-preserves-capabilities-but-diminishes%20%E2%80%94%20Projection%20sampling%20preserves%20capabilities%20but%20diminishes%20gains%20from%20alignment%20fine-tuning" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://www.lesswrong.com/posts/xFxmqkjLNa2Bvs7cw/projection-sampling-preserves-capabilities-but-diminishes" class="url" target="_blank" rel="noopener noreferrer">https://www.lesswrong.com/posts/xFxmqkjLNa2Bvs7cw/projection-sampling-preserves-capabilities-but-diminishes</a></div>
+    </article>
+    <article class="item" data-item-url="https://spacenews.com/spacex-proposing-sharp-increase-in-starship-launches-from-texas/">
+      <h2 class="headline"><a href="https://spacenews.com/spacex-proposing-sharp-increase-in-starship-launches-from-texas/" target="_blank" rel="noopener noreferrer">SpaceX proposing sharp increase in Starship launches from Texas</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-16T12:00:00Z">14 hours ago</time> · <span class="source">SpaceNews</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//spacenews.com/spacex-proposing-sharp-increase-in-starship-launches-from-texas/%20%E2%80%94%20SpaceX%20proposing%20sharp%20increase%20in%20Starship%20launches%20from%20Texas" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://spacenews.com/spacex-proposing-sharp-increase-in-starship-launches-from-texas/" class="url" target="_blank" rel="noopener noreferrer">https://spacenews.com/spacex-proposing-sharp-increase-in-starship-launches-from-texas/</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.chinafile.com/reporting-opinion/features/exporting-micro-drama-machine">
+      <h2 class="headline"><a href="https://www.chinafile.com/reporting-opinion/features/exporting-micro-drama-machine" target="_blank" rel="noopener noreferrer">Exporting the Micro-Drama Machine</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-16T12:00:00Z">14 hours ago</time> · <span class="source">ChinaFile</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//www.chinafile.com/reporting-opinion/features/exporting-micro-drama-machine%20%E2%80%94%20Exporting%20the%20Micro-Drama%20Machine" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://www.chinafile.com/reporting-opinion/features/exporting-micro-drama-machine" class="url" target="_blank" rel="noopener noreferrer">https://www.chinafile.com/reporting-opinion/features/exporting-micro-drama-machine</a></div>
+    </article>
+    <article class="item" data-item-url="https://languagelog.ldc.upenn.edu/nll/?p=74427">
+      <h2 class="headline"><a href="https://languagelog.ldc.upenn.edu/nll/?p=74427" target="_blank" rel="noopener noreferrer">Skit hits back at AI job interviews</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-16T12:00:00Z">14 hours ago</time> · <span class="source">Language Log</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//languagelog.ldc.upenn.edu/nll/%3Fp%3D74427%20%E2%80%94%20Skit%20hits%20back%20at%20AI%20job%20interviews" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://languagelog.ldc.upenn.edu/nll/?p=74427" class="url" target="_blank" rel="noopener noreferrer">https://languagelog.ldc.upenn.edu/nll/?p=74427</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.fdd.org/analysis/lebanon-revokes-bank-saderats-license-but-hezbollahs-financial-network-remains/">
+      <h2 class="headline"><a href="https://www.fdd.org/analysis/lebanon-revokes-bank-saderats-license-but-hezbollahs-financial-network-remains/" target="_blank" rel="noopener noreferrer">Lebanon Revokes Bank Saderat’s License, but Hezbollah’s Financial Network Remains</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-16T12:00:00Z">14 hours ago</time> · <span class="source">FDD</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//www.fdd.org/analysis/lebanon-revokes-bank-saderats-license-but-hezbollahs-financial-network-remains/%20%E2%80%94%20Lebanon%20Revokes%20Bank%20Saderat%E2%80%99s%20License%2C%20but%20Hezbollah%E2%80%99s%20Financial%20Network%20Remains" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://www.fdd.org/analysis/lebanon-revokes-bank-saderats-license-but-hezbollahs-financial-network-remains/" class="url" target="_blank" rel="noopener noreferrer">https://www.fdd.org/analysis/lebanon-revokes-bank-saderats-license-but-hezbollahs-financial-network-remains/</a></div>
+    </article>
+    <article class="item" data-item-url="https://aeon.co/essays/the-century-long-search-for-the-limits-to-knowledge">
+      <h2 class="headline"><a href="https://aeon.co/essays/the-century-long-search-for-the-limits-to-knowledge" target="_blank" rel="noopener noreferrer">The ladder of knowledge</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-15T12:00:00Z">1 day ago</time> · <span class="source">Aeon</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//aeon.co/essays/the-century-long-search-for-the-limits-to-knowledge%20%E2%80%94%20The%20ladder%20of%20knowledge" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://aeon.co/essays/the-century-long-search-for-the-limits-to-knowledge" class="url" target="_blank" rel="noopener noreferrer">https://aeon.co/essays/the-century-long-search-for-the-limits-to-knowledge</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.fdd.org/analysis/sporadic-weapons-seizures-wont-stop-hezbollahs-rearmament/">
+      <h2 class="headline"><a href="https://www.fdd.org/analysis/sporadic-weapons-seizures-wont-stop-hezbollahs-rearmament/" target="_blank" rel="noopener noreferrer">Sporadic Weapons Seizures Won’t Stop Hezbollah’s Rearmament</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-15T12:00:00Z">1 day ago</time> · <span class="source">FDD</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//www.fdd.org/analysis/sporadic-weapons-seizures-wont-stop-hezbollahs-rearmament/%20%E2%80%94%20Sporadic%20Weapons%20Seizures%20Won%E2%80%99t%20Stop%20Hezbollah%E2%80%99s%20Rearmament" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://www.fdd.org/analysis/sporadic-weapons-seizures-wont-stop-hezbollahs-rearmament/" class="url" target="_blank" rel="noopener noreferrer">https://www.fdd.org/analysis/sporadic-weapons-seizures-wont-stop-hezbollahs-rearmament/</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.csis.org/analysis/could-russia-be-poised-use-orbit-weapon-against-commercial-satellite">
+      <h2 class="headline"><a href="https://www.csis.org/analysis/could-russia-be-poised-use-orbit-weapon-against-commercial-satellite" target="_blank" rel="noopener noreferrer">Could Russia Be Poised to Use an On-Orbit Weapon Against a Commercial Satellite?</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-15T12:00:00Z">1 day ago</time> · <span class="source">CSIS</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//www.csis.org/analysis/could-russia-be-poised-use-orbit-weapon-against-commercial-satellite%20%E2%80%94%20Could%20Russia%20Be%20Poised%20to%20Use%20an%20On-Orbit%20Weapon%20Against%20a%20Commercial%20Satellite%3F" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://www.csis.org/analysis/could-russia-be-poised-use-orbit-weapon-against-commercial-satellite" class="url" target="_blank" rel="noopener noreferrer">https://www.csis.org/analysis/could-russia-be-poised-use-orbit-weapon-against-commercial-satellite</a></div>
+    </article>
+    <article class="item" data-item-url="https://cursor.com/changelog/origin-app-marketplace">
+      <h2 class="headline"><a href="https://cursor.com/changelog/origin-app-marketplace" target="_blank" rel="noopener noreferrer">Origin App Marketplace</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-13T12:00:00Z">3 days ago</time> · <span class="source">Cursor</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//cursor.com/changelog/origin-app-marketplace%20%E2%80%94%20Origin%20App%20Marketplace" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://cursor.com/changelog/origin-app-marketplace" class="url" target="_blank" rel="noopener noreferrer">https://cursor.com/changelog/origin-app-marketplace</a></div>
+    </article>
+    <article class="item" data-item-url="https://interlude.hk/greek-national-opera-at-carnegie-hallkazantzakis-odyssey-in-music/">
+      <h2 class="headline"><a href="https://interlude.hk/greek-national-opera-at-carnegie-hallkazantzakis-odyssey-in-music/" target="_blank" rel="noopener noreferrer">Greek National Opera at Carnegie Hall: Kazantzakis’ Odyssey in Music</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-13T12:00:00Z">3 days ago</time> · <span class="source">Interlude</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//interlude.hk/greek-national-opera-at-carnegie-hallkazantzakis-odyssey-in-music/%20%E2%80%94%20Greek%20National%20Opera%20at%20Carnegie%20Hall%3A%20Kazantzakis%E2%80%99%20Odyssey%20in%20Music" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://interlude.hk/greek-national-opera-at-carnegie-hallkazantzakis-odyssey-in-music/" class="url" target="_blank" rel="noopener noreferrer">https://interlude.hk/greek-national-opera-at-carnegie-hallkazantzakis-odyssey-in-music/</a></div>
+    </article>
+    <article class="item" data-item-url="https://docs.x.ai/grok-bot/teams-and-enterprises">
+      <h2 class="headline"><a href="https://docs.x.ai/grok-bot/teams-and-enterprises" target="_blank" rel="noopener noreferrer">Grok Bot for teams and enterprises</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-12T12:00:00Z">4 days ago</time> · <span class="source">xAI Docs</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//docs.x.ai/grok-bot/teams-and-enterprises%20%E2%80%94%20Grok%20Bot%20for%20teams%20and%20enterprises" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://docs.x.ai/grok-bot/teams-and-enterprises" class="url" target="_blank" rel="noopener noreferrer">https://docs.x.ai/grok-bot/teams-and-enterprises</a></div>
+    </article>
+    <article class="item" data-item-url="https://marginalrevolution.com/marginalrevolution/2026/10/okie-dokie-casey-handmer-edition.html">
+      <h2 class="headline"><a href="https://marginalrevolution.com/marginalrevolution/2026/10/okie-dokie-casey-handmer-edition.html" target="_blank" rel="noopener noreferrer">Okie-dokie, Casey Handmer edition</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-12T12:00:00Z">4 days ago</time> · <span class="source">Marginal Revolution</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//marginalrevolution.com/marginalrevolution/2026/10/okie-dokie-casey-handmer-edition.html%20%E2%80%94%20Okie-dokie%2C%20Casey%20Handmer%20edition" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://marginalrevolution.com/marginalrevolution/2026/10/okie-dokie-casey-handmer-edition.html" class="url" target="_blank" rel="noopener noreferrer">https://marginalrevolution.com/marginalrevolution/2026/10/okie-dokie-casey-handmer-edition.html</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.wine-searcher.com/m/2026/10/was-wine-invented-or-discovered">
+      <h2 class="headline"><a href="https://www.wine-searcher.com/m/2026/10/was-wine-invented-or-discovered" target="_blank" rel="noopener noreferrer">Was Wine Invented or Discovered?</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-10T12:00:00Z">6 days ago</time> · <span class="source">Wine-Searcher</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//www.wine-searcher.com/m/2026/10/was-wine-invented-or-discovered%20%E2%80%94%20Was%20Wine%20Invented%20or%20Discovered%3F" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://www.wine-searcher.com/m/2026/10/was-wine-invented-or-discovered" class="url" target="_blank" rel="noopener noreferrer">https://www.wine-searcher.com/m/2026/10/was-wine-invented-or-discovered</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.lesswrong.com/posts/nM5WC7qASadDwoYpJ/nick-land-has-no-theory-of-ai-just-a-theory-of-capitalism">
+      <h2 class="headline"><a href="https://www.lesswrong.com/posts/nM5WC7qASadDwoYpJ/nick-land-has-no-theory-of-ai-just-a-theory-of-capitalism" target="_blank" rel="noopener noreferrer">Nick Land has no theory of AI, just a theory of capitalism</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-09T12:00:00Z">1 week ago</time> · <span class="source">LessWrong</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//www.lesswrong.com/posts/nM5WC7qASadDwoYpJ/nick-land-has-no-theory-of-ai-just-a-theory-of-capitalism%20%E2%80%94%20Nick%20Land%20has%20no%20theory%20of%20AI%2C%20just%20a%20theory%20of%20capitalism" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://www.lesswrong.com/posts/nM5WC7qASadDwoYpJ/nick-land-has-no-theory-of-ai-just-a-theory-of-capitalism" class="url" target="_blank" rel="noopener noreferrer">https://www.lesswrong.com/posts/nM5WC7qASadDwoYpJ/nick-land-has-no-theory-of-ai-just-a-theory-of-capitalism</a></div>
+    </article>
+    <article class="item" data-item-url="https://spacenews.com/spacex-could-seek-more-spectrum-to-feed-terrestrial-wireless-ambitions/">
+      <h2 class="headline"><a href="https://spacenews.com/spacex-could-seek-more-spectrum-to-feed-terrestrial-wireless-ambitions/" target="_blank" rel="noopener noreferrer">SpaceX could seek more spectrum to feed terrestrial wireless ambitions</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-09T12:00:00Z">1 week ago</time> · <span class="source">SpaceNews</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//spacenews.com/spacex-could-seek-more-spectrum-to-feed-terrestrial-wireless-ambitions/%20%E2%80%94%20SpaceX%20could%20seek%20more%20spectrum%20to%20feed%20terrestrial%20wireless%20ambitions" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://spacenews.com/spacex-could-seek-more-spectrum-to-feed-terrestrial-wireless-ambitions/" class="url" target="_blank" rel="noopener noreferrer">https://spacenews.com/spacex-could-seek-more-spectrum-to-feed-terrestrial-wireless-ambitions/</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.smithsonianmag.com/smart-news/dozens-of-curious-artworks-created-with-woven-strands-of-human-hair-come-to-new-yorks-morbid-anatomy-library-180989577/">
+      <h2 class="headline"><a href="https://www.smithsonianmag.com/smart-news/dozens-of-curious-artworks-created-with-woven-strands-of-human-hair-come-to-new-yorks-morbid-anatomy-library-180989577/" target="_blank" rel="noopener noreferrer">Dozens of Curious Artworks Created With Woven Strands of Human Hair Come to New York’s Morbid Anatomy Library</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-02T12:00:00Z">2 weeks ago</time> · <span class="source">Smithsonian Magazine</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//www.smithsonianmag.com/smart-news/dozens-of-curious-artworks-created-with-woven-strands-of-human-hair-come-to-new-yorks-morbid-anatomy-library-180989577/%20%E2%80%94%20Dozens%20of%20Curious%20Artworks%20Created%20With%20Woven%20Strands%20of%20Human%20Hair%20Come%20to%20New%20York%E2%80%99s%20Morbid%20Anatomy%20Library" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://www.smithsonianmag.com/smart-news/dozens-of-curious-artworks-created-with-woven-strands-of-human-hair-come-to-new-yorks-morbid-anatomy-library-180989577/" class="url" target="_blank" rel="noopener noreferrer">https://www.smithsonianmag.com/smart-news/dozens-of-curious-artworks-created-with-woven-strands-of-human-hair-come-to-new-yorks-morbid-anatomy-library-180989577/</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.historyextra.com/period/victorian/was-the-british-empire-really-built-on-drugs/">
+      <h2 class="headline"><a href="https://www.historyextra.com/period/victorian/was-the-british-empire-really-built-on-drugs/" target="_blank" rel="noopener noreferrer">Was the British Empire really built on drugs?</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-09-25T12:00:00Z">3 weeks ago</time> · <span class="source">HistoryExtra</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//www.historyextra.com/period/victorian/was-the-british-empire-really-built-on-drugs/%20%E2%80%94%20Was%20the%20British%20Empire%20really%20built%20on%20drugs%3F" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://www.historyextra.com/period/victorian/was-the-british-empire-really-built-on-drugs/" class="url" target="_blank" rel="noopener noreferrer">https://www.historyextra.com/period/victorian/was-the-british-empire-really-built-on-drugs/</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.youtube.com/watch?v=6AgOfiZOWiY">
+      <h2 class="headline"><a href="https://www.youtube.com/watch?v=6AgOfiZOWiY" target="_blank" rel="noopener noreferrer">▶️ OpenAI researcher on agent swarms &amp; recursive self-improvement</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-09-17T12:00:00Z">4 weeks ago</time> · <span class="source">YouTube · Dwarkesh Patel</span> · <a href="https://t.me/TomGOpenClaw_bot?text=watch%20https%3A//www.youtube.com/watch%3Fv%3D6AgOfiZOWiY%20%E2%80%94%20OpenAI%20researcher%20on%20agent%20swarms%20%26%20recursive%20self-improvement" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Watch later)">📌 Save</a> · <a href="https://www.youtube.com/watch?v=6AgOfiZOWiY" class="url" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=6AgOfiZOWiY</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.youtube.com/watch?v=FdkpWrlR5zg">
+      <h2 class="headline"><a href="https://www.youtube.com/watch?v=FdkpWrlR5zg" target="_blank" rel="noopener noreferrer">▶️ Sarah Paine – Why Russia Lost the Cold War</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-09-17T12:00:00Z">4 weeks ago</time> · <span class="source">YouTube · Dwarkesh Patel</span> · <a href="https://t.me/TomGOpenClaw_bot?text=watch%20https%3A//www.youtube.com/watch%3Fv%3DFdkpWrlR5zg%20%E2%80%94%20Sarah%20Paine%20%E2%80%93%20Why%20Russia%20Lost%20the%20Cold%20War" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Watch later)">📌 Save</a> · <a href="https://www.youtube.com/watch?v=FdkpWrlR5zg" class="url" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=FdkpWrlR5zg</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.youtube.com/watch?v=frJ26BzC8CY">
+      <h2 class="headline"><a href="https://www.youtube.com/watch?v=frJ26BzC8CY" target="_blank" rel="noopener noreferrer">▶️ Production Hell - Super Mario Bros</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-15T17:07:40Z">1 day ago</time> · <span class="source">YouTube · The Critical Drinker (Will Jordan)</span> · <a href="https://t.me/TomGOpenClaw_bot?text=watch%20https%3A//www.youtube.com/watch%3Fv%3DfrJ26BzC8CY%20%E2%80%94%20Production%20Hell%20-%20Super%20Mario%20Bros" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Watch later)">📌 Save</a> · <a href="https://www.youtube.com/watch?v=frJ26BzC8CY" class="url" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=frJ26BzC8CY</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.youtube.com/watch?v=2tAywoHiIpo">
+      <h2 class="headline"><a href="https://www.youtube.com/watch?v=2tAywoHiIpo" target="_blank" rel="noopener noreferrer">▶️ Elizabeth Holmes&#x27; Husband Billy Evans: The Trial, Prison &amp; Nathan Fielder’s Documentary</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-15T02:41:18Z">1 day ago</time> · <span class="source">YouTube · All-In Podcast</span> · <a href="https://t.me/TomGOpenClaw_bot?text=watch%20https%3A//www.youtube.com/watch%3Fv%3D2tAywoHiIpo%20%E2%80%94%20Elizabeth%20Holmes%27%20Husband%20Billy%20Evans%3A%20The%20Trial%2C%20Prison%20%26%20Nathan%20Fielder%E2%80%99s%20Documentary" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Watch later)">📌 Save</a> · <a href="https://www.youtube.com/watch?v=2tAywoHiIpo" class="url" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=2tAywoHiIpo</a></div>
+    </article>
+    <article class="item" data-item-url="https://mtslive.substack.com/p/1015-neural-networks-are-already">
+      <h2 class="headline"><a href="https://mtslive.substack.com/p/1015-neural-networks-are-already" target="_blank" rel="noopener noreferrer">10/15: Neural Networks Are Already Clean?</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-16T01:07:43Z">1 day ago</time> · <span class="source">Substack · MTS</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//mtslive.substack.com/p/1015-neural-networks-are-already%20%E2%80%94%2010/15%3A%20Neural%20Networks%20Are%20Already%20Clean%3F" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://mtslive.substack.com/p/1015-neural-networks-are-already" class="url" target="_blank" rel="noopener noreferrer">https://mtslive.substack.com/p/1015-neural-networks-are-already</a></div>
+    </article>
+    <article class="item" data-item-url="https://hannahspier.substack.com/p/why-therapy-wont-save-your-marriage">
+      <h2 class="headline"><a href="https://hannahspier.substack.com/p/why-therapy-wont-save-your-marriage" target="_blank" rel="noopener noreferrer">Why Therapy Won’t Save Your Marriage</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-15T13:21:36Z">1 day ago</time> · <span class="source">Substack · Psychobabble</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//hannahspier.substack.com/p/why-therapy-wont-save-your-marriage%20%E2%80%94%20Why%20Therapy%20Won%E2%80%99t%20Save%20Your%20Marriage" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://hannahspier.substack.com/p/why-therapy-wont-save-your-marriage" class="url" target="_blank" rel="noopener noreferrer">https://hannahspier.substack.com/p/why-therapy-wont-save-your-marriage</a></div>
+    </article>
+    <article class="item" data-item-url="https://newsletter.amitsegal.net/p/its-noon-in-israel-the-10-commandments-c6a">
+      <h2 class="headline"><a href="https://newsletter.amitsegal.net/p/its-noon-in-israel-the-10-commandments-c6a" target="_blank" rel="noopener noreferrer">Commandment VI: Serve the State and Keep it Holy</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-15T11:03:56Z">1 day ago</time> · <span class="source">Substack · It&#x27;s Noon In Israel</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//newsletter.amitsegal.net/p/its-noon-in-israel-the-10-commandments-c6a%20%E2%80%94%20Commandment%20VI%3A%20Serve%20the%20State%20and%20Keep%20it%20Holy" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://newsletter.amitsegal.net/p/its-noon-in-israel-the-10-commandments-c6a" class="url" target="_blank" rel="noopener noreferrer">https://newsletter.amitsegal.net/p/its-noon-in-israel-the-10-commandments-c6a</a></div>
+    </article>
+    <article class="item" data-item-url="https://interlude.hk/chopins-final-year-a-month-by-month-guide-to-1849/">
+      <h2 class="headline"><a href="https://interlude.hk/chopins-final-year-a-month-by-month-guide-to-1849/" target="_blank" rel="noopener noreferrer">Chopin’s Final Year: A Month-By-Month Guide to 1849</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-15T12:00:00Z">1 day ago</time> · <span class="source">Interlude</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//interlude.hk/chopins-final-year-a-month-by-month-guide-to-1849/%20%E2%80%94%20Chopin%E2%80%99s%20Final%20Year%3A%20A%20Month-By-Month%20Guide%20to%201849" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://interlude.hk/chopins-final-year-a-month-by-month-guide-to-1849/" class="url" target="_blank" rel="noopener noreferrer">https://interlude.hk/chopins-final-year-a-month-by-month-guide-to-1849/</a></div>
+    </article>
+    <article class="item" data-item-url="https://marginalrevolution.com/marginalrevolution/2026/10/astra-held-its-ground-truth.html">
+      <h2 class="headline"><a href="https://marginalrevolution.com/marginalrevolution/2026/10/astra-held-its-ground-truth.html" target="_blank" rel="noopener noreferrer">Astra Held Its Ground (Truth)</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-15T12:00:00Z">1 day ago</time> · <span class="source">Marginal Revolution</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//marginalrevolution.com/marginalrevolution/2026/10/astra-held-its-ground-truth.html%20%E2%80%94%20Astra%20Held%20Its%20Ground%20%28Truth%29" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://marginalrevolution.com/marginalrevolution/2026/10/astra-held-its-ground-truth.html" class="url" target="_blank" rel="noopener noreferrer">https://marginalrevolution.com/marginalrevolution/2026/10/astra-held-its-ground-truth.html</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.apolloresearch.ai/science/update-aware-reasoning-glm-5-3">
+      <h2 class="headline"><a href="https://www.apolloresearch.ai/science/update-aware-reasoning-glm-5-3" target="_blank" rel="noopener noreferrer">Update-Aware Reasoning in GLM-5.3: Training &amp; Alignment Faking</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-15T12:00:00Z">1 day ago</time> · <span class="source">Apollo Research</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//www.apolloresearch.ai/science/update-aware-reasoning-glm-5-3%20%E2%80%94%20Update-Aware%20Reasoning%20in%20GLM-5.3%3A%20Training%20%26%20Alignment%20Faking" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://www.apolloresearch.ai/science/update-aware-reasoning-glm-5-3" class="url" target="_blank" rel="noopener noreferrer">https://www.apolloresearch.ai/science/update-aware-reasoning-glm-5-3</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/byzantine-synagogue-golan/">
+      <h2 class="headline"><a href="https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/byzantine-synagogue-golan/" target="_blank" rel="noopener noreferrer">Byzantine Synagogue Uncovered in the Golan</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-14T12:00:00Z">2 days ago</time> · <span class="source">Biblical Archaeology Society</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/byzantine-synagogue-golan/%20%E2%80%94%20Byzantine%20Synagogue%20Uncovered%20in%20the%20Golan" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/byzantine-synagogue-golan/" class="url" target="_blank" rel="noopener noreferrer">https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/byzantine-synagogue-golan/</a></div>
+    </article>
+    <article class="item" data-item-url="https://x.ai/news/grok-voice-3">
+      <h2 class="headline"><a href="https://x.ai/news/grok-voice-3" target="_blank" rel="noopener noreferrer">Introducing Grok Voice 3.0</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-14T12:00:00Z">2 days ago</time> · <span class="source">xAI</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//x.ai/news/grok-voice-3%20%E2%80%94%20Introducing%20Grok%20Voice%203.0" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://x.ai/news/grok-voice-3" class="url" target="_blank" rel="noopener noreferrer">https://x.ai/news/grok-voice-3</a></div>
+    </article>
+    <article class="item" data-item-url="https://aeon.co/essays/the-more-we-rely-on-tech-the-more-we-deskill-our-bodies">
+      <h2 class="headline"><a href="https://aeon.co/essays/the-more-we-rely-on-tech-the-more-we-deskill-our-bodies" target="_blank" rel="noopener noreferrer">The more we rely on tech, the more we deskill our bodies</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-13T12:00:00Z">3 days ago</time> · <span class="source">Aeon</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//aeon.co/essays/the-more-we-rely-on-tech-the-more-we-deskill-our-bodies%20%E2%80%94%20The%20more%20we%20rely%20on%20tech%2C%20the%20more%20we%20deskill%20our%20bodies" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://aeon.co/essays/the-more-we-rely-on-tech-the-more-we-deskill-our-bodies" class="url" target="_blank" rel="noopener noreferrer">https://aeon.co/essays/the-more-we-rely-on-tech-the-more-we-deskill-our-bodies</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.lesswrong.com/posts/nc9dHfcB22JdMzGbr/paper-j-lens-jacobian-filtering-enables-more-faithful">
+      <h2 class="headline"><a href="https://www.lesswrong.com/posts/nc9dHfcB22JdMzGbr/paper-j-lens-jacobian-filtering-enables-more-faithful" target="_blank" rel="noopener noreferrer">Paper: J++ Lens — Jacobian filtering enables more faithful readouts</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-12T12:00:00Z">4 days ago</time> · <span class="source">LessWrong</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//www.lesswrong.com/posts/nc9dHfcB22JdMzGbr/paper-j-lens-jacobian-filtering-enables-more-faithful%20%E2%80%94%20Paper%3A%20J%2B%2B%20Lens%20%E2%80%94%20Jacobian%20filtering%20enables%20more%20faithful%20readouts" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://www.lesswrong.com/posts/nc9dHfcB22JdMzGbr/paper-j-lens-jacobian-filtering-enables-more-faithful" class="url" target="_blank" rel="noopener noreferrer">https://www.lesswrong.com/posts/nc9dHfcB22JdMzGbr/paper-j-lens-jacobian-filtering-enables-more-faithful</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.lesswrong.com/posts/qwk7Xc2qhMChXqntK/paper-distillation-for-incrimination-and-distillation-for">
+      <h2 class="headline"><a href="https://www.lesswrong.com/posts/qwk7Xc2qhMChXqntK/paper-distillation-for-incrimination-and-distillation-for" target="_blank" rel="noopener noreferrer">Paper: Distillation for Incrimination and Distillation for Capabilities</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-10T12:00:00Z">6 days ago</time> · <span class="source">LessWrong</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//www.lesswrong.com/posts/qwk7Xc2qhMChXqntK/paper-distillation-for-incrimination-and-distillation-for%20%E2%80%94%20Paper%3A%20Distillation%20for%20Incrimination%20and%20Distillation%20for%20Capabilities" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://www.lesswrong.com/posts/qwk7Xc2qhMChXqntK/paper-distillation-for-incrimination-and-distillation-for" class="url" target="_blank" rel="noopener noreferrer">https://www.lesswrong.com/posts/qwk7Xc2qhMChXqntK/paper-distillation-for-incrimination-and-distillation-for</a></div>
+    </article>
+    <article class="item" data-item-url="https://languagelog.ldc.upenn.edu/nll/?p=74386">
+      <h2 class="headline"><a href="https://languagelog.ldc.upenn.edu/nll/?p=74386" target="_blank" rel="noopener noreferrer">Filthy comfortable</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-09T12:00:00Z">1 week ago</time> · <span class="source">Language Log</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//languagelog.ldc.upenn.edu/nll/%3Fp%3D74386%20%E2%80%94%20Filthy%20comfortable" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://languagelog.ldc.upenn.edu/nll/?p=74386" class="url" target="_blank" rel="noopener noreferrer">https://languagelog.ldc.upenn.edu/nll/?p=74386</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.fdd.org/analysis/between-the-straits-the-world-cannot-afford-to-yield-to-iran/">
+      <h2 class="headline"><a href="https://www.fdd.org/analysis/between-the-straits-the-world-cannot-afford-to-yield-to-iran/" target="_blank" rel="noopener noreferrer">Between the straits: The world cannot afford to yield to Iran</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-09T12:00:00Z">1 week ago</time> · <span class="source">FDD</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//www.fdd.org/analysis/between-the-straits-the-world-cannot-afford-to-yield-to-iran/%20%E2%80%94%20Between%20the%20straits%3A%20The%20world%20cannot%20afford%20to%20yield%20to%20Iran" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://www.fdd.org/analysis/between-the-straits-the-world-cannot-afford-to-yield-to-iran/" class="url" target="_blank" rel="noopener noreferrer">https://www.fdd.org/analysis/between-the-straits-the-world-cannot-afford-to-yield-to-iran/</a></div>
+    </article>
+    <article class="item" data-item-url="https://9to5mac.com/2026/10/09/grok-bot-just-got-its-own-email-address-heres-how-to-claim-yours/">
+      <h2 class="headline"><a href="https://9to5mac.com/2026/10/09/grok-bot-just-got-its-own-email-address-heres-how-to-claim-yours/" target="_blank" rel="noopener noreferrer">Grok Bot just got its own email address</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-09T12:00:00Z">1 week ago</time> · <span class="source">9to5Mac</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//9to5mac.com/2026/10/09/grok-bot-just-got-its-own-email-address-heres-how-to-claim-yours/%20%E2%80%94%20Grok%20Bot%20just%20got%20its%20own%20email%20address" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://9to5mac.com/2026/10/09/grok-bot-just-got-its-own-email-address-heres-how-to-claim-yours/" class="url" target="_blank" rel="noopener noreferrer">https://9to5mac.com/2026/10/09/grok-bot-just-got-its-own-email-address-heres-how-to-claim-yours/</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.csis.org/analysis/postwar-threat-gulf-energy-infrastructure">
+      <h2 class="headline"><a href="https://www.csis.org/analysis/postwar-threat-gulf-energy-infrastructure" target="_blank" rel="noopener noreferrer">The Postwar Threat to Gulf Energy Infrastructure</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-08T12:00:00Z">1 week ago</time> · <span class="source">CSIS</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//www.csis.org/analysis/postwar-threat-gulf-energy-infrastructure%20%E2%80%94%20The%20Postwar%20Threat%20to%20Gulf%20Energy%20Infrastructure" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://www.csis.org/analysis/postwar-threat-gulf-energy-infrastructure" class="url" target="_blank" rel="noopener noreferrer">https://www.csis.org/analysis/postwar-threat-gulf-energy-infrastructure</a></div>
+    </article>
+    <article class="item" data-item-url="https://www.decanter.com/wine/decanter-magazine-october-2026-issue-and-italy-guide-see-whats-inside/">
+      <h2 class="headline"><a href="https://www.decanter.com/wine/decanter-magazine-october-2026-issue-and-italy-guide-see-whats-inside/" target="_blank" rel="noopener noreferrer">Decanter magazine October 2026 issue and Italy guide</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-07T12:00:00Z">1 week ago</time> · <span class="source">Decanter</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//www.decanter.com/wine/decanter-magazine-october-2026-issue-and-italy-guide-see-whats-inside/%20%E2%80%94%20Decanter%20magazine%20October%202026%20issue%20and%20Italy%20guide" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://www.decanter.com/wine/decanter-magazine-october-2026-issue-and-italy-guide-see-whats-inside/" class="url" target="_blank" rel="noopener noreferrer">https://www.decanter.com/wine/decanter-magazine-october-2026-issue-and-italy-guide-see-whats-inside/</a></div>
+    </article>
+    <article class="item" data-item-url="https://spacenews.com/fcc-tees-up-another-d2d-boost-after-approving-starlink-mobile-upgrade/">
+      <h2 class="headline"><a href="https://spacenews.com/fcc-tees-up-another-d2d-boost-after-approving-starlink-mobile-upgrade/" target="_blank" rel="noopener noreferrer">FCC tees up another D2D boost after approving Starlink Mobile upgrade</a></h2>
+      <div class="meta"><time class="rel-time" datetime="2026-10-07T12:00:00Z">1 week ago</time> · <span class="source">SpaceNews</span> · <a href="https://t.me/TomGOpenClaw_bot?text=read%20https%3A//spacenews.com/fcc-tees-up-another-d2d-boost-after-approving-starlink-mobile-upgrade/%20%E2%80%94%20FCC%20tees%20up%20another%20D2D%20boost%20after%20approving%20Starlink%20Mobile%20upgrade" class="save" target="_blank" rel="noopener noreferrer" title="Save to Google Tasks (Reading)">📌 Save</a> · <a href="https://spacenews.com/fcc-tees-up-another-d2d-boost-after-approving-starlink-mobile-upgrade/" class="url" target="_blank" rel="noopener noreferrer">https://spacenews.com/fcc-tees-up-another-d2d-boost-after-approving-starlink-mobile-upgrade/</a></div>
+    </article>
+    </main>
+    <aside class="sidebar">
+      <section class="tasks" aria-label="Google Tasks queues">
+      <section class="task-list">
+        <p class="task-list-name"><a href="https://tasks.google.com/embed/list/ZVFEQVBmY2E1VDdxM045Mg?origin=https://mail.google.com" target="_blank" rel="noopener noreferrer">Reading</a></p>
+        <ul>
+        <li><a href="https://worksinprogress.co/issue/the-seven-vices-of-highly-effective-victorians/" target="_blank" rel="noopener noreferrer">The Seven Vices of Highly Effective…</a></li>
+        <li><a href="https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-rome/adriatic-shipwreck-reveals-details-of-roman-trade/" target="_blank" rel="noopener noreferrer">Adriatic Shipwreck Reveals Details of…</a></li>
+        <li><a href="https://www.newyorker.com/news/the-lede/what-chinas-vibe-coding-capital-can-tell-us-about-the-ai-boom" target="_blank" rel="noopener noreferrer">What China&#x27;s Vibe-Coding Capital Can Tell…</a></li>
+        <li><a href="https://www.haaretz.com/opinion/2026-10-02/ty-article-opinion/.premium/no-the-new-yorker-did-not-blame-punctuation-for-palestinian-suffering/000001a0-fdff-d8c5-aff7-fdff69110000" target="_blank" rel="noopener noreferrer">No, The New Yorker Did Not Blame…</a></li>
+        <li><a href="https://www.newyorker.com/magazine/2026/09/28/on-the-mark-louis-menand-book-review" target="_blank" rel="noopener noreferrer">On the Mark (Louis Menand book review) —…</a></li>
+        <li><a href="https://www.palladiummag.com/2026/09/18/dont-count-out-the-country-house/" target="_blank" rel="noopener noreferrer">Don&#x27;t Count Out the Country House</a></li>
+        <li><a href="https://www.timesofisrael.com/golan-druze-increasingly-embrace-israel-reject-syria-in-seismic-shift-triggered-by-tragedy/" target="_blank" rel="noopener noreferrer">Golan Druze increasingly embrace Israel,…</a></li>
+        <li><a href="https://www.youtube.com/watch?v=SNnCtAR_8Q8" target="_blank" rel="noopener noreferrer">Caesarea: The City that Changed the World!</a></li>
+        <li><a href="https://www.zinebriboua.com/p/the-islamic-republics-illusion-of" target="_blank" rel="noopener noreferrer">The Islamic Republic&#x27;s Illusion of Power</a></li>
+        <li><a href="https://www.thespacereview.com/article/5231/1" target="_blank" rel="noopener noreferrer">Starships are meant to eventually fly</a></li>
+        <li><a href="https://marginalrevolution.com/marginalrevolution/2026/09/more-optimistic-results-on-ai-and-job-markets.html" target="_blank" rel="noopener noreferrer">More optimistic results on AI and job…</a></li>
+        <li><a href="https://marginalrevolution.com/marginalrevolution/2026/08/anthropomorphizing-ai.html" target="_blank" rel="noopener noreferrer">Anthropomorphizing AI?</a></li>
+        <li><a href="https://www.e-ir.org/p/trumps-vision-for-greenland-and-the" target="_blank" rel="noopener noreferrer">Trump&#x27;s Vision for Greenland and the…</a></li>
+        <li><a href="https://mfo-my.sharepoint.com/:t:/r/personal/goldberger_mfo_org/Documents/03" target="_blank" rel="noopener noreferrer">Helen Anfews crossroad</a></li>
+        <li><a href="https://www.cambridge.org/core/journals/antiquity/collections/trade-and-connections" target="_blank" rel="noopener noreferrer">Trade and Connections (Antiquity -…</a></li>
+        <li><a href="https://www.ynet.co.il/news/article/hjqb2uahzl" target="_blank" rel="noopener noreferrer">רעידת אדמה הכתה במצרים - והורגשה גם בישראל</a></li>
+        <li><a href="https://www.nytimes.com/2024/05/16/magazine/israel-west-bank-settler-violence-impunity.html" target="_blank" rel="noopener noreferrer">NYT: Israel&#x27;s West Bank Settler Violence…</a></li>
+        <li><a href="https://tasks.google.com/task/y8ylwlEmqycvHg7A?sa=6" target="_blank" rel="noopener noreferrer">https://arstechnica.com/space/2026/07/how-h…</a></li>
+        <li><a href="https://www.newyorker.com/magazine/2026/06/15/radical-duke-danielle-allen-book-review" target="_blank" rel="noopener noreferrer">Did a Rowdy English Nobleman Mastermind…</a></li>
+        <li><a href="https://app.xmind.com/share/bA9yLCfq?xid=S46oLiVN" target="_blank" rel="noopener noreferrer">Xmind mind map — shared</a></li>
+        </ul>
+      </section>
+      <section class="task-list">
+        <p class="task-list-name"><a href="https://tasks.google.com/embed/list/aEVJNVBjWmhTRFBvdmpZUA?origin=https://mail.google.com" target="_blank" rel="noopener noreferrer">Watch later</a></p>
+        <ul>
+        <li><a href="https://www.wandervogel.art/p/radiocast-no-5-the-god-who-comes" target="_blank" rel="noopener noreferrer">Radiocast No. 5: The God Who Comes</a></li>
+        <li><a href="https://x.com/i/status/2043852793320980810" target="_blank" rel="noopener noreferrer">X status 2043852793320980810</a></li>
+        <li><a href="https://openhouse-magazine.com/" target="_blank" rel="noopener noreferrer">OpenHouse Magazine</a></li>
+        <li><a href="https://www.pbs.org/wnet/gperf/now-hear-this-rachmaninoff-reborn-about/16617/" target="_blank" rel="noopener noreferrer">Now Hear This: Rachmaninoff Reborn</a></li>
+        <li><a href="https://www.youtube.com/watch?v=b_W0z6hZlrI" target="_blank" rel="noopener noreferrer">The Odyssey - A Disastrous Triumph</a></li>
+        <li><a href="https://tasks.google.com/task/2t-TYY2sfSGLODDH?sa=6" target="_blank" rel="noopener noreferrer">Look into Planet Earth TV series</a></li>
+        <li><a href="https://x.com/hamptonism/status/2072316268326052157" target="_blank" rel="noopener noreferrer">&quot;This is by far one of the most important…</a></li>
+        <li><a href="https://www.youtube.com/watch?v=vqphgWu1Is8" target="_blank" rel="noopener noreferrer">How one man pursued a life of total…</a></li>
+        <li><a href="https://www.wwfm.org/show/the-piano-matters-with-david-dubal/2026-06-24/the-piano-matters-june-17" target="_blank" rel="noopener noreferrer">The Piano Matters: June 17</a></li>
+        </ul>
+      </section>
+      <section class="task-list">
+        <p class="task-list-name"><a href="https://tasks.google.com/embed/list/cVZVQVRHN09SMDNvNEpFTg?origin=https://mail.google.com" target="_blank" rel="noopener noreferrer">Book reading</a></p>
+        <ul>
+        <li><a href="https://tasks.google.com/task/5N57fFhI5J0ayvOg?sa=6" target="_blank" rel="noopener noreferrer">Read: The Thirty Years War: Europe&#x27;s…</a></li>
+        <li><a href="https://tasks.google.com/task/ajc8untEls7Ravz3?sa=6" target="_blank" rel="noopener noreferrer">Read: History of England by David Hume</a></li>
+        <li><a href="https://tasks.google.com/task/LBU1Ys61APLdkrHY?sa=6" target="_blank" rel="noopener noreferrer">Read: Swann&#x27;s Way by Marcel Proust</a></li>
+        <li><a href="https://gutenberg.org/cache/epub/18883/pg18883.txt" target="_blank" rel="noopener noreferrer">Read: The Four Feathers by A.E.W. Mason</a></li>
+        <li><a href="https://tasks.google.com/task/CmSOD3xl-sr00YDS?sa=6" target="_blank" rel="noopener noreferrer">Read: The Kafirs of the Hindu Kush by…</a></li>
+        <li><a href="https://tasks.google.com/task/pz53D89Zdt4kjcI7?sa=6" target="_blank" rel="noopener noreferrer">Owsley Frank Plain Folk of the Old South</a></li>
+        </ul>
+      </section>
+      </section>
+      <section class="links">
+        <ul>
+        <li><a href="https://marginalrevolution.com" rel="noopener noreferrer" target="_blank">Marginal Revolution</a></li>
+        <li><a href="https://x.com/realErikDPrince" rel="noopener noreferrer" target="_blank">Erik Prince Off Leash</a></li>
+        <li><a href="https://jmarriott.substack.com" rel="noopener noreferrer" target="_blank">Cultural Capital</a></li>
+        <li><a href="https://janeanson.com" rel="noopener noreferrer" target="_blank">Jane Anson</a></li>
+        <li><a href="https://www.youtube.com/@allin" rel="noopener noreferrer" target="_blank">All-In</a></li>
+        <li><a href="https://drive.google.com/uc?export=download&amp;id=1l_Ruz5fkEihL8oAUKbEAusC55d-tJt5N" rel="noopener noreferrer" class="site-typora" data-open-with="typora" data-drive-download="https://drive.google.com/uc?export=download&amp;id=1l_Ruz5fkEihL8oAUKbEAusC55d-tJt5N" data-fallback-url="https://drive.google.com/file/d/1l_Ruz5fkEihL8oAUKbEAusC55d-tJt5N/view" title="Open in Typora if available; otherwise Google Drive" target="_blank">Elon Musk GTD</a></li>
+        <li><a href="https://www.nytimes.com" rel="noopener noreferrer" target="_blank">NYTimes</a></li>
+        <li><a href="https://www.zerohedge.com" rel="noopener noreferrer" target="_blank">Zero Hedge</a></li>
+        <li><a href="https://revolver.news/newsfeed" rel="noopener noreferrer" target="_blank">Revolver News</a></li>
+        <li><a href="https://www.youtube.com/channel/UCG7Vh-hy0I0N5g3ZVpdwXmQ" rel="noopener noreferrer" target="_blank">Israel Update</a></li>
+        <li><a href="https://www.wwfm.org/show/the-piano-matters-with-david-dubal" rel="noopener noreferrer" target="_blank">Piano Matters</a></li>
+        <li><a href="https://hannahspier.substack.com/" rel="noopener noreferrer" target="_blank">Psychobabble</a></li>
+        <li><a href="https://iainmcgilchrist.substack.com/" rel="noopener noreferrer" target="_blank">Matter with Things</a></li>
+        <li><a href="https://www.wandervogel.art/" rel="noopener noreferrer" target="_blank">Wandervogel</a></li>
+        <li><a href="https://www.bronzeagepervert.yoga/" rel="noopener noreferrer" target="_blank">Magenta Notebooks</a></li>
+        <li><a href="https://www.newyorker.com/" rel="noopener noreferrer" target="_blank">The New Yorker</a></li>
+        <li><a href="https://www.theatlantic.com/" rel="noopener noreferrer" target="_blank">The Atlantic</a></li>
+        <li><a href="https://aeon.co/" rel="noopener noreferrer" target="_blank">Aeon</a></li>
+        <li><a href="https://www.biblicalarchaeology.org/" rel="noopener noreferrer" target="_blank">Biblical Archaeology</a></li>
+        <li><a href="https://www.decanter.com/" rel="noopener noreferrer" target="_blank">Decanter</a></li>
+        <li><a href="https://www.technologyreview.com/" rel="noopener noreferrer" target="_blank">MIT Tech Review</a></li>
+        </ul>
+        <p class="sites-manage"><a href="https://t.me/TomGOpenClaw_bot?text=manage%20tomfeed%20sites%20%E2%80%94%20list%20my%20sidebar%20links%20%28newest%20first%29%20and%20show%20how%20to%20add%20or%20remove.%20Examples%3A%20add%20tomfeed%20site%20Aeon%20https%3A//aeon.co/%20%C2%B7%20remove%20tomfeed%20site%20Decanter" target="_blank" rel="noopener noreferrer" title="Manage sidebar sites via Telegram">manage</a></p>
+      </section>
+    </aside>
+    </div>
+    <footer>
+      Newest first · topics drawn across curiosities.md sections (not grouped by topic).
+    </footer>
+  </div>
+  <script>
+    (function () {
+      function rel(iso) {
+        var then = new Date(iso);
+        if (isNaN(then)) return iso;
+        var sec = Math.floor((Date.now() - then.getTime()) / 1000);
+        if (sec < 60) return "just now";
+        var min = Math.floor(sec / 60);
+        if (min < 60) return min === 1 ? "1 minute ago" : min + " minutes ago";
+        var hr = Math.floor(min / 60);
+        if (hr < 24) return hr === 1 ? "1 hour ago" : hr + " hours ago";
+        var day = Math.floor(hr / 24);
+        if (day < 7) return day === 1 ? "1 day ago" : day + " days ago";
+        var week = Math.floor(day / 7);
+        if (week < 5) return week === 1 ? "1 week ago" : week + " weeks ago";
+        var month = Math.floor(day / 30);
+        if (month < 12) return month === 1 ? "1 month ago" : month + " months ago";
+        var year = Math.floor(day / 365);
+        return year === 1 ? "1 year ago" : year + " years ago";
+      }
+      document.querySelectorAll("time.rel-time").forEach(function (el) {
+        var iso = el.getAttribute("datetime");
+        if (iso) el.textContent = rel(iso);
+      });
+
+      var initialSaved = [&quot;https://app.xmind.com/share/bA9yLCfq????xid=S46oLiVN&quot;, &quot;https://arstechnica.com/space/2026/07/how-hard-is-it-to-build-orbital-data-centers-actually&quot;, &quot;https://biblicalarchaeology.org/daily/ancient-cultures/ancient-rome/adriatic-shipwreck-reveals-details-of-roman-trade&quot;, &quot;https://cambridge.org/core/journals/antiquity/collections/trade-and-connections&quot;, &quot;https://e-ir.org/p/trumps-vision-for-greenland-and-the&quot;, &quot;https://haaretz.com/opinion/2026-10-02/ty-article-opinion/.premium/no-the-new-yorker-did-not-blame-punctuation-for-palestinian-suffering/000001a0-fdff-d8c5-aff7-fdff69110000&quot;, &quot;https://marginalrevolution.com/marginalrevolution/2026/08/anthropomorphizing-ai.html&quot;, &quot;https://marginalrevolution.com/marginalrevolution/2026/09/more-optimistic-results-on-ai-and-job-markets.html&quot;, &quot;https://mfo-my.sharepoint.com/:t:/r/personal/goldberger_mfo_org/Documents/03&quot;, &quot;https://newyorker.com/magazine/2026/06/15/radical-duke-danielle-allen-book-review&quot;, &quot;https://newyorker.com/magazine/2026/09/28/on-the-mark-louis-menand-book-review&quot;, &quot;https://newyorker.com/news/the-lede/what-chinas-vibe-coding-capital-can-tell-us-about-the-ai-boom&quot;, &quot;https://nytimes.com/2024/05/16/magazine/israel-west-bank-settler-violence-impunity.html&quot;, &quot;https://openhouse-magazine.com&quot;, &quot;https://palladiummag.com/2026/09/18/dont-count-out-the-country-house&quot;, &quot;https://pbs.org/wnet/gperf/now-hear-this-rachmaninoff-reborn-about/16617&quot;, &quot;https://thespacereview.com/article/5231/1&quot;, &quot;https://timesofisrael.com/golan-druze-increasingly-embrace-israel-reject-syria-in-seismic-shift-triggered-by-tragedy&quot;, &quot;https://wandervogel.art/p/radiocast-no-5-the-god-who-comes&quot;, &quot;https://worksinprogress.co/issue/the-seven-vices-of-highly-effective-victorians&quot;, &quot;https://wwfm.org/show/the-piano-matters-with-david-dubal/2026-06-24/the-piano-matters-june-17&quot;, &quot;https://x.com/hamptonism/status/2072316268326052157&quot;, &quot;https://x.com/i/status/2043852793320980810&quot;, &quot;https://ynet.co.il/news/article/hjqb2uahzl&quot;, &quot;https://youtube.com/watch?v=SNnCtAR_8Q8&quot;, &quot;https://youtube.com/watch?v=b_W0z6hZlrI&quot;, &quot;https://youtube.com/watch?v=vqphgWu1Is8&quot;, &quot;https://zinebriboua.com/p/the-islamic-republics-illusion-of&quot;];
+      function normUrl(href) {
+        try {
+          var u = new URL(href);
+          if (u.hostname.indexOf("www.") === 0) u.hostname = u.hostname.slice(4);
+          if (u.hostname === "youtu.be") {
+            return "https://youtube.com/watch?v=" + u.pathname.replace(/^\//, "");
+          }
+          if (u.hostname.indexOf("youtube.com") >= 0 && u.searchParams.get("v")) {
+            return "https://youtube.com/watch?v=" + u.searchParams.get("v");
+          }
+          var out = u.origin + u.pathname.replace(/\/$/, "");
+          if (u.search) out += u.search;
+          return out.toLowerCase();
+        } catch (e) {
+          return (href || "").toLowerCase().replace(/\/$/, "");
+        }
+      }
+      function applySaved(urls) {
+        var set = {};
+        (urls || []).forEach(function (u) { set[normUrl(u)] = true; });
+        document.querySelectorAll("article.item[data-item-url]").forEach(function (el) {
+          var href = el.getAttribute("data-item-url");
+          if (!set[normUrl(href)]) return;
+          el.classList.add("saved");
+          var save = el.querySelector("a.save");
+          if (save) {
+            var badge = document.createElement("span");
+            badge.className = "saved-badge";
+            badge.textContent = "✓ Saved";
+            save.replaceWith(badge);
+          }
+        });
+      }
+      applySaved(initialSaved);
+
+      var params = new URLSearchParams(window.location.search);
+      var token = params.get("t") || localStorage.getItem("tomfeed_api_token");
+      if (params.get("t")) localStorage.setItem("tomfeed_api_token", params.get("t"));
+      if (token) {
+        fetch("/api/tomfeed/saved", { headers: { "Authorization": "Bearer " + token } })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (data) { if (data && data.urls) applySaved(data.urls); })
+          .catch(function () {});
+      }
+
+      function tryTyporaOpen(localPath, fallbackUrl) {
+        var tries = [
+          "typora://open?path=" + encodeURIComponent(localPath),
+          "typora://path/" + encodeURIComponent(localPath)
+        ];
+        var i = 0;
+        function attempt() {
+          if (i >= tries.length) {
+            if (fallbackUrl) window.open(fallbackUrl, "_blank", "noopener");
+            return;
+          }
+          var el = document.createElement("a");
+          el.href = tries[i++];
+          el.style.display = "none";
+          document.body.appendChild(el);
+          el.click();
+          el.remove();
+          setTimeout(attempt, 150);
+        }
+        attempt();
+      }
+
+      document.querySelectorAll("a.site-typora").forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          var localPath = a.getAttribute("data-typora-path");
+          var fallback = a.getAttribute("data-fallback-url") || a.href;
+          if (!localPath) return;
+          e.preventDefault();
+          tryTyporaOpen(localPath, fallback);
+        });
+      });
+
+      // Keep the feed tab focused: open links in a background tab
+      // (Chromium/Opera treat Cmd/Ctrl+click as "open without switching").
+      document.addEventListener("click", function (e) {
+        if (e.defaultPrevented) return;
+        if (e.button !== 0) return;
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        var a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+        if (!a || a.hasAttribute("download")) return;
+        if (a.classList.contains("site-typora") && a.getAttribute("data-typora-path")) return;
+        var href = a.getAttribute("href") || "";
+        if (!href || href.charAt(0) === "#" || href.indexOf("javascript:") === 0) return;
+        if (/^(typora:|mailto:)/i.test(href)) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var proxy = document.createElement("a");
+        proxy.href = href;
+        proxy.target = "_blank";
+        proxy.rel = "noopener noreferrer";
+        proxy.style.display = "none";
+        document.body.appendChild(proxy);
+        var isMac = /Mac|iPhone|iPad|iPod/.test(navigator.platform || "") ||
+          (navigator.userAgentData && navigator.userAgentData.platform === "macOS") ||
+          /Mac OS X/.test(navigator.userAgent || "");
+        proxy.dispatchEvent(new MouseEvent("click", {
+          bubbles: true,
+          cancelable: true,
+          view: window,
+          ctrlKey: !isMac,
+          metaKey: !!isMac
+        }));
+        proxy.remove();
+      });
+    })();
+  </script>
+</body>
+</html>
