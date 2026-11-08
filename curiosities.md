@@ -19,6 +19,7 @@ Public site: https://tomgassistant-png.github.io/tomfeed/
 8. Set `published_at` from the piece; set `added_at` to now (ISO UTC). Newest first.
 9. **Excluded outlets — never add:** History Today (`historytoday.com`), Foreign Affairs (`foreignaffairs.com`), War on the Rocks (`warontherocks.com`), Lawfare (`lawfaremedia.org`), New York Review of Books (`nybooks.com`).
 10. Publish the static page to GitHub Pages. Do not use OpenClaw/Telegram for the daily refresh.
+11. **Keep the site unindexed:** always ship `robots.txt` with `User-agent: *` / `Disallow: /`, and put `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">` in every HTML page (including regenerated `index.html`). Never submit a sitemap.
 
 ### Selective topic filters
 

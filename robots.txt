@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+# TomFeed is private; do not index any path on this GitHub Pages site.
