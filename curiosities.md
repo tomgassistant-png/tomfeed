@@ -20,6 +20,7 @@ Public site: https://tomgassistant-png.github.io/tomfeed/
 9. **Excluded outlets — never add:** History Today (`historytoday.com`), Foreign Affairs (`foreignaffairs.com`), War on the Rocks (`warontherocks.com`), Lawfare (`lawfaremedia.org`), New York Review of Books (`nybooks.com`).
 10. Publish the static page to GitHub Pages. Do not use OpenClaw/Telegram for the daily refresh.
 11. **Keep the site unindexed:** always ship `robots.txt` with `User-agent: *` / `Disallow: /`, and put `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">` in every HTML page (including regenerated `index.html`). Never submit a sitemap.
+12. **Page chrome (every build):** rebuild `index.html` with `python3 generate.py` from `feed.json`. Do not rewrite feed items for a chrome-only change. The script always puts an edition line at the very top, above weather/markets, from the same generation timestamp as the footer, in Asia/Jerusalem — `Edition: Sun, Nov 8, 2026, 7:33 AM Israel time (05:33 UTC)`. It sets the root font size to 120% so all text scales together. It links **Edit interests (curiosities.md)** to `https://github.com/tomgassistant-png/tomfeed/edit/main/curiosities.md` next to that edition line and in the footer beside the curiosities.md note.
 
 ### Selective topic filters
 

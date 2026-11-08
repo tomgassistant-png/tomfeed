@@ -15,6 +15,7 @@
       --headline: #111827;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 120%; }
     body {
       font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background: var(--bg);
@@ -23,6 +24,12 @@
       padding: 2rem 1rem 4rem;
     }
     .wrap { max-width: 42rem; margin: 0 auto; }
+    .edition {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.85rem;
+    }
+    .edition a, footer a { color: var(--link); }
     header {
       border-bottom: 1px solid var(--border);
       margin-bottom: 1.5rem;
@@ -63,10 +70,12 @@
       font-size: 0.8rem;
       margin-top: 2rem;
     }
+    footer p + p { margin-top: 0.35rem; }
   </style>
 </head>
 <body>
   <div class="wrap">
+    <p class="edition">Edition: Sun, Nov 8, 2026, 7:33 AM Israel time (05:33 UTC) · <a href="https://github.com/tomgassistant-png/tomfeed/edit/main/curiosities.md">Edit interests (curiosities.md)</a></p>
     <header>
       <h1>Curiosities Feed</h1>
       <p class="sub">Newest first</p>
@@ -294,7 +303,7 @@ Link 👇</div>
     </main>
     <footer>
       <p>generated 2026-11-08 05:33 UTC</p>
-      <p>Interests come from curiosities.md.</p>
+      <p>Interests come from curiosities.md. <a href="https://github.com/tomgassistant-png/tomfeed/edit/main/curiosities.md">Edit interests (curiosities.md)</a></p>
     </footer>
   </div>
   <script>
