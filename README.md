@@ -10,3 +10,5 @@ Static curiosities feed.
 `index.html` is generated/published by the Bot. Do not hand-edit it as the source of truth.
 
 Search engines: this Pages site is **noindex** (`robots.txt` + meta robots). Do not add a sitemap.
+
+| **Feed state** | `feed.json` (live items) · `ever-seen.json` (dedupe history) — Bot reads/writes these on each daily pass |
