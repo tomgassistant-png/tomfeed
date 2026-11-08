@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 """Rebuild index.html from feed.json.
 
-Does not add, remove, or rewrite feed items. Every build includes:
+Does not add or rewrite ordinary feed items. Every build includes:
 - an edition line at the top, in Asia/Jerusalem, from the same timestamp as the footer
 - a root font size of 120%
 - an "Edit interests (curiosities.md)" link near the edition line and in the footer
 - the noindex robots meta tag
+
+An Off Leash update is shown only in the edition that first adds it. This script
+marks that edition on the item. A later build, once generated_at has moved on,
+drops the item. No placeholder is added when there is no new update.
 """
 
 from __future__ import annotations
@@ -61,6 +65,64 @@ def footer_stamp(generated_at: datetime) -> str:
 
 def esc(value: str) -> str:
     return html.escape(value, quote=True)
+
+
+def is_off_leash(item: dict) -> bool:
+    title = item.get("title") or ""
+    source = item.get("source") or ""
+    return title.startswith("Off Leash") or "Off Leash" in source
+
+
+def is_utility(item: dict) -> bool:
+    url = item.get("url") or ""
+    return "wttr.in" in url or "finance.yahoo.com" in url
+
+
+def apply_off_leash(feed: dict) -> bool:
+    """Keep an Off Leash item only for the edition that first adds it.
+
+    The item is pinned below weather and markets. The next edition drops it.
+    When none is new, the section is omitted (no placeholder).
+    Returns True when feed.json should be rewritten.
+    """
+    edition = str(feed.get("generated_at") or "")
+    others = []
+    showing = []
+    changed = False
+    for item in feed["items"]:
+        if not is_off_leash(item):
+            others.append(item)
+            continue
+        shown_edition = item.get("off_leash_edition")
+        if item.get("off_leash_shown") and shown_edition == edition:
+            showing.append(item)
+            continue
+        if item.get("off_leash_shown"):
+            changed = True
+            continue
+        item = dict(item)
+        item["off_leash_shown"] = True
+        item["off_leash_edition"] = edition
+        showing.append(item)
+        changed = True
+    if len(showing) > 1:
+        showing.sort(key=lambda it: it.get("published_at") or "", reverse=True)
+        showing = showing[:1]
+        changed = True
+    prefix = []
+    rest = []
+    passed_utility = False
+    for item in others:
+        if not passed_utility and is_utility(item):
+            prefix.append(item)
+        else:
+            passed_utility = True
+            rest.append(item)
+    new_items = prefix + showing + rest
+    if new_items != feed["items"]:
+        changed = True
+    feed["items"] = new_items
+    return changed
 
 
 def render_item(item: dict) -> str:
@@ -206,6 +268,8 @@ def render_page(feed: dict) -> str:
 
 def main() -> None:
     feed = json.loads(FEED_PATH.read_text())
+    if apply_off_leash(feed):
+        FEED_PATH.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n")
     page = render_page(feed)
     if 'name="robots" content="noindex, nofollow, noarchive, nosnippet"' not in page:
         raise SystemExit("missing robots meta")

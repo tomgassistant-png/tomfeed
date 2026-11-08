@@ -20,7 +20,7 @@ Public site: https://tomgassistant-png.github.io/tomfeed/
 9. **Excluded outlets — never add:** History Today (`historytoday.com`), Foreign Affairs (`foreignaffairs.com`), War on the Rocks (`warontherocks.com`), Lawfare (`lawfaremedia.org`), New York Review of Books (`nybooks.com`).
 10. Publish the static page to GitHub Pages. Do not use OpenClaw/Telegram for the daily refresh.
 11. **Keep the site unindexed:** always ship `robots.txt` with `User-agent: *` / `Disallow: /`, and put `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">` in every HTML page (including regenerated `index.html`). Never submit a sitemap.
-12. **Page chrome (every build):** rebuild `index.html` with `python3 generate.py` from `feed.json`. Do not rewrite feed items for a chrome-only change. The script always puts an edition line at the very top, above weather/markets, from the same generation timestamp as the footer, in Asia/Jerusalem — `Edition: Sun, Nov 8, 2026, 7:33 AM Israel time (05:33 UTC)`. It sets the root font size to 120% so all text scales together. It links **Edit interests (curiosities.md)** to `https://github.com/tomgassistant-png/tomfeed/edit/main/curiosities.md` next to that edition line and in the footer beside the curiosities.md note.
+12. **Page chrome (every build):** rebuild `index.html` with `python3 generate.py` from `feed.json`. Do not rewrite ordinary feed items for a chrome-only change. The script always puts an edition line at the very top, above weather/markets, from the same generation timestamp as the footer, in Asia/Jerusalem — `Edition: Sun, Nov 8, 2026, 7:33 AM Israel time (05:33 UTC)`. It sets the root font size to 120% so all text scales together. It links **Edit interests (curiosities.md)** to `https://github.com/tomgassistant-png/tomfeed/edit/main/curiosities.md` next to that edition line and in the footer beside the curiosities.md note. On that same run it applies the Off Leash rule: show a new update only in the edition that first adds it, then remove it; never insert a placeholder.
 
 ### Selective topic filters
 
@@ -70,7 +70,7 @@ Fixed sources. Check these every refresh; do not leave them to general search al
 
 | Account | Handle | Notes |
 |---------|--------|--------|
-| Erik Prince (Off Leash) | [@realErikDPrince](https://x.com/realErikDPrince) | **Only** posts whose first line starts with “Off Leash update”. Max 1 (newest). Keep full post body for inline display. Pin near top of the page (below weather/markets if those exist). Do not alert on Telegram if missing. |
+| Erik Prince (Off Leash) | [@realErikDPrince](https://x.com/realErikDPrince) | **Only** posts whose first line starts with “Off Leash update”. Max 1 (newest). Keep the full post body for inline display. Pin below weather/markets when those exist. Shown once, in the edition where it first appears, then removed; no placeholder. `generate.py` records that edition and drops the item once `generated_at` moves on. Do not alert on Telegram if missing. |
 | Yonatan Adler | [@AdlerYonatan](https://x.com/AdlerYonatan) | Max 1 serious archaeology/history post; also surface him in general search across platforms |
 
 ---
