@@ -3,7 +3,7 @@
 
 Does not add or rewrite ordinary feed items. Every build includes:
 - an edition line at the top, in Asia/Jerusalem, from the same timestamp as the footer
-- a root font size of 120%
+- a root font size of 138% (120% plus another 15%)
 - an "Edit interests (curiosities.md)" link near the edition line and in the footer
 - the noindex robots meta tag
 
@@ -164,7 +164,7 @@ def render_page(feed: dict) -> str:
       --headline: #111827;
     }}
     * {{ box-sizing: border-box; margin: 0; padding: 0; }}
-    html {{ font-size: 120%; }}
+    html {{ font-size: 138%; }}
     body {{
       font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background: var(--bg);
@@ -273,7 +273,7 @@ def main() -> None:
     page = render_page(feed)
     if 'name="robots" content="noindex, nofollow, noarchive, nosnippet"' not in page:
         raise SystemExit("missing robots meta")
-    if "font-size: 120%" not in page:
+    if "font-size: 138%" not in page:
         raise SystemExit("missing root font size")
     if page.count(EDIT_LABEL) < 2 or EDIT_URL not in page:
         raise SystemExit("missing edit link")
