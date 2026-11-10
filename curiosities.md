@@ -201,7 +201,6 @@ Broad subjects — topics, not individual articles. Rotate across sections; do n
 - [ ] Political and national identity
 - [ ] How narratives form and spread
 - [ ] Philosophy of religion
-- [ ] US progressive politics
 - [ ] Psychology of dreams
 - [ ] Reinventing oneself later in life
 - [ ] How societies change
