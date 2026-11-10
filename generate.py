@@ -7,6 +7,9 @@ Does not add or rewrite ordinary feed items. Every build includes:
 - an "Edit interests (curiosities.md)" link near the edition line and in the footer
 - the noindex robots meta tag
 
+An item may include an optional summary string. When that string is non-empty,
+the page shows it as a paragraph directly under the item's title, link, and meta line.
+
 An Off Leash update is shown only in the edition that first adds it. This script
 marks that edition on the item. A later build, once generated_at has moved on,
 drops the item. No placeholder is added when there is no new update.
@@ -135,9 +138,13 @@ def render_item(item: dict) -> str:
         klass = "item off-leash"
     body = item.get("body") or ""
     body_html = f'\n      <div class="item-body">{esc(body)}</div>' if body else ""
+    summary = item.get("summary")
+    summary_html = ""
+    if isinstance(summary, str) and summary.strip():
+        summary_html = f'\n      <p class="summary">{esc(summary.strip())}</p>'
     return f'''    <article class="{klass}" data-item-url="{esc(url)}">
       <h2 class="headline"><a href="{esc(url)}">{esc(title)}</a></h2>
-      <p class="meta"><time class="rel-time" datetime="{esc(published)}">{esc(published)}</time> · <span class="source">{esc(source)}</span> · <a class="url" href="{esc(url)}">{esc(url)}</a></p>{body_html}
+      <p class="meta"><time class="rel-time" datetime="{esc(published)}">{esc(published)}</time> · <span class="source">{esc(source)}</span> · <a class="url" href="{esc(url)}">{esc(url)}</a></p>{summary_html}{body_html}
     </article>'''
 
 
@@ -207,6 +214,12 @@ def render_page(feed: dict) -> str:
     .meta, .url {{ color: var(--muted); font-size: 0.82rem; }}
     .url {{ word-break: break-all; text-decoration: none; }}
     .url:hover {{ color: var(--link); text-decoration: underline; }}
+    .summary {{
+      color: #4b5563;
+      font-weight: 400;
+      line-height: 1.5;
+      margin-top: 0.65rem;
+    }}
     .item-body {{
       white-space: pre-wrap;
       margin-top: 0.75rem;
@@ -277,6 +290,8 @@ def main() -> None:
         raise SystemExit("missing root font size")
     if page.count(EDIT_LABEL) < 2 or EDIT_URL not in page:
         raise SystemExit("missing edit link")
+    if ".summary {" not in page:
+        raise SystemExit("missing summary style")
     OUT_PATH.write_text(page)
     print(edition_line(parse_generated_at(str(feed["generated_at"]))))
     print(f"wrote {OUT_PATH.name} ({len(feed['items'])} items)")

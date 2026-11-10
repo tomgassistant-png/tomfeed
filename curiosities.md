@@ -20,7 +20,7 @@ Public site: https://tomgassistant-png.github.io/tomfeed/
 9. **Excluded outlets — never add:** History Today (`historytoday.com`), Foreign Affairs (`foreignaffairs.com`), War on the Rocks (`warontherocks.com`), Lawfare (`lawfaremedia.org`), New York Review of Books (`nybooks.com`).
 10. Publish the static page to GitHub Pages. Do not use OpenClaw/Telegram for the daily refresh.
 11. **Keep the site unindexed:** always ship `robots.txt` with `User-agent: *` / `Disallow: /`, and put `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">` in every HTML page (including regenerated `index.html`). Never submit a sitemap.
-12. **Page chrome (every build):** rebuild `index.html` with `python3 generate.py` from `feed.json`. Do not rewrite ordinary feed items for a chrome-only change. The script always puts an edition line at the very top, above weather/markets, from the same generation timestamp as the footer, in Asia/Jerusalem — `Edition: Sun, Nov 8, 2026, 7:33 AM Israel time (05:33 UTC)`. It sets the root font size to 138% so all text scales together. It links **Edit interests (curiosities.md)** to `https://github.com/tomgassistant-png/tomfeed/edit/main/curiosities.md` next to that edition line and in the footer beside the curiosities.md note. On that same run it applies the Off Leash rule: show a new update only in the edition that first adds it, then remove it; never insert a placeholder.
+12. **Page chrome (every build):** rebuild `index.html` with `python3 generate.py` from `feed.json`. Do not rewrite ordinary feed items for a chrome-only change. The script always puts an edition line at the very top, above weather/markets, from the same generation timestamp as the footer, in Asia/Jerusalem — `Edition: Sun, Nov 8, 2026, 7:33 AM Israel time (05:33 UTC)`. It sets the root font size to 138% so all text scales together. It links **Edit interests (curiosities.md)** to `https://github.com/tomgassistant-png/tomfeed/edit/main/curiosities.md` next to that edition line and in the footer beside the curiosities.md note. On that same run it applies the Off Leash rule: show a new update only in the edition that first adds it, then remove it; never insert a placeholder. Items may carry an optional `summary` field that `generate.py` renders as a paragraph under the item's link.
 
 ### Selective topic filters
 
@@ -65,7 +65,7 @@ Fixed sources. Check these every refresh; do not leave them to general search al
 | All-In Podcast | https://www.youtube.com/@allin | Latest 1–2 full episodes (≥20 min); never Shorts |
 | The Critical Drinker (Will Jordan) | https://www.youtube.com/@TheCriticalDrinker | Latest 1–2; skip Shorts; main channel only |
 | The Students | https://www.youtube.com/@the_students_media | Latest 1–2; skip Shorts |
-| Peter St. Onge | https://www.youtube.com/@Profstonge | **Max 1** — newest full video only; skip Shorts. Add it once (normal ever-seen dedupe); never repeat an already-seen video. |
+| Peter St. Onge | https://www.youtube.com/@Profstonge | **Max 1** — newest full video only; skip Shorts. Add it once (normal ever-seen dedupe); never repeat an already-seen video. Include a one-paragraph summary (about 3-5 sentences, plain words, American spelling) of the key points made in the video, stored in the item's `summary` field and shown under the link. Build it from the transcript/captions or the video description; never invent claims. If no transcript or description is available, say so briefly instead of guessing. |
 
 ### X
 
