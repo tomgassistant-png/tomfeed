@@ -65,6 +65,7 @@ Fixed sources. Check these every refresh; do not leave them to general search al
 | All-In Podcast | https://www.youtube.com/@allin | Latest 1–2 full episodes (≥20 min); never Shorts |
 | The Critical Drinker (Will Jordan) | https://www.youtube.com/@TheCriticalDrinker | Latest 1–2; skip Shorts; main channel only |
 | The Students | https://www.youtube.com/@the_students_media | Latest 1–2; skip Shorts |
+| Peter St. Onge | https://www.youtube.com/@Profstonge | **Max 1** — newest full video only; skip Shorts. Add it once (normal ever-seen dedupe); never repeat an already-seen video. |
 
 ### X
 
