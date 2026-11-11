@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T02:08:06Z",
+  "updated_at": "2026-11-11T05:06:57Z",
   "urls": {
     "https://19.bbk.ac.uk/article/id/1717": {
       "first_seen_at": "2026-10-26T02:05:43Z"
@@ -8553,6 +8553,9 @@
     },
     "https://www.google.com/finance/quote/USD-ILS": {
       "first_seen_at": "2026-11-10T14:03:35Z"
+    },
+    "https://www.youtube.com/watch?v=IavZ8WtqXA8": {
+      "first_seen_at": "2026-11-11T05:06:57Z"
     }
   }
 }

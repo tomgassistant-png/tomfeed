@@ -56,6 +56,7 @@ Fixed sources. Check these every refresh; do not leave them to general search al
 | Name | Where | Notes |
 |------|-------|--------|
 | The Piano Matters (David Dubal) | https://www.wwfm.org/show/the-piano-matters-with-david-dubal | WWFM; no public RSS — check listings for new episodes |
+| EconTalk (Russ Roberts) | https://www.youtube.com/@econtalkwithruss (RSS backup: https://feeds.simplecast.com/wgl4xEgL; site: https://www.econtalk.org/) | Every new weekly episode, once each (normal ever-seen dedupe; never repeat). Link to the full episode on YouTube, skip Shorts and clips; if the YouTube video isn't up yet, fall back to the econtalk.org episode page. Official channel is @econtalkwithruss (@EconTalkRuss is not a channel). Full episodes are also posted on https://www.youtube.com/@HooverInstitution; use that full upload when the EconTalk channel has not posted it yet. The daily report must name any new EconTalk episode added, since the owner wants to be alerted to new episodes. |
 
 ### YouTube (no Shorts)
 
