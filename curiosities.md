@@ -22,6 +22,12 @@ Public site: https://tomgassistant-png.github.io/tomfeed/
 11. **Keep the site unindexed:** always ship `robots.txt` with `User-agent: *` / `Disallow: /`, and put `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">` in every HTML page (including regenerated `index.html`). Never submit a sitemap.
 12. **Page chrome (every build):** rebuild `index.html` with `python3 generate.py` from `feed.json`. Do not rewrite ordinary feed items for a chrome-only change. The script always puts an edition line at the very top, above weather/markets, from the same generation timestamp as the footer, in Asia/Jerusalem — `Edition: Sun, Nov 8, 2026, 7:33 AM Israel time (05:33 UTC)`. It sets the root font size to 138% so all text scales together. It links **Edit interests (curiosities.md)** to `https://github.com/tomgassistant-png/tomfeed/edit/main/curiosities.md` next to that edition line and in the footer beside the curiosities.md note. On that same run it applies the Off Leash rule: show a new update only in the edition that first adds it, then remove it; never insert a placeholder. Items may carry an optional `summary` field that `generate.py` renders as a paragraph under the item's link.
 
+### Pending one-time adds
+
+On the next daily run, add the article below unless its URL is already in `feed.json` or `ever-seen.json`. Remove this note once it has been added.
+
+- The Atlantic, 'The Lost World of Aquaterra', https://www.theatlantic.com/magazine/2026/12/aquaterra-ancient-human-migration/689029/ (owner requested on Nov 11, 2026 after Charles C. Mann shared it).
+
 ### Selective topic filters
 
 - **Cursor and Grok Bot:** prefer official Cursor/xAI announcements, docs/changelogs, credible tech press on material changes. Exclude lifestyle/promo fluff, “how I use…” blogs, tips listicles, sales spam.
@@ -135,6 +141,7 @@ Broad subjects — topics, not individual articles. Rotate across sections; do n
 - [ ] Tibet
 - [ ] Mesoamerica and pre-Columbian urban history
 - [ ] Neolithic astronomy and ceremonial landscapes
+- [ ] Early human origins and prehistoric migration — including submerged coastal landscapes drowned at the end of the Ice Age
 - [ ] Arctic and Greenland — history, society, and indigenous cultures
 - [ ] American Civil War memory and historic sites
 - [ ] Local and suburban history (US Northeast)
