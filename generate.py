@@ -6,7 +6,7 @@ Does not add or rewrite ordinary feed items. Every build includes:
 - a root font size of 138%
 - an "Edit interests (curiosities.md)" link near the edition line and in the footer
 - the noindex robots meta tag
-- each item's save-to-Google-Tasks link (weather and markets omitted)
+- no save button (on hold): do not emit a save link on any item
 - target="_blank" rel="noopener noreferrer" on every outbound anchor
 
 An item may include an optional summary string. When that string is non-empty,
@@ -24,7 +24,6 @@ import json
 import re
 from datetime import datetime
 from pathlib import Path
-from urllib.parse import quote
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent
@@ -128,37 +127,6 @@ def is_utility(item: dict) -> bool:
     return "wttr.in" in url or "finance.yahoo.com" in url or "google.com/finance" in url
 
 
-def is_watch(item: dict) -> bool:
-    url = item.get("url") or ""
-    title = item.get("title") or ""
-    source = item.get("source") or ""
-    return (
-        "youtube.com" in url
-        or "youtu.be" in url
-        or title.startswith("▶️")
-        or title.startswith("🎧")
-        or "YouTube" in source
-    )
-
-
-def save_html(item: dict) -> str:
-    if is_utility(item):
-        return ""
-    verb = "watch" if is_watch(item) else "read"
-    queue = "Watch later" if is_watch(item) else "Reading"
-    text = f"{verb} {item['url']} — {item['title']}"
-    href = "https://t.me/TomGOpenClaw_bot?text=" + quote(text, safe="/")
-    return (
-        " · "
-        + outbound_link(
-            href,
-            "📌 Save",
-            klass="save",
-            title=f"Save to Google Tasks ({queue})",
-        )
-    )
-
-
 def apply_off_leash(feed: dict) -> bool:
     """Keep an Off Leash item only for the edition that first adds it.
 
@@ -224,7 +192,7 @@ def render_item(item: dict) -> str:
     source_link = outbound_link(url, esc(url), klass="url")
     return f'''    <article class="{klass}" data-item-url="{esc(url)}">
       <h2 class="headline">{title_link}</h2>
-      <p class="meta"><time class="rel-time" datetime="{esc(published)}">{esc(published)}</time> · <span class="source">{esc(source)}</span>{save_html(item)} · {source_link}</p>{summary_html}{body_html}
+      <p class="meta"><time class="rel-time" datetime="{esc(published)}">{esc(published)}</time> · <span class="source">{esc(source)}</span> · {source_link}</p>{summary_html}{body_html}
     </article>'''
 
 
@@ -424,8 +392,8 @@ def main() -> None:
         raise SystemExit("missing edit link")
     if ".summary {" not in page:
         raise SystemExit("missing summary style")
-    if 'class="save"' not in page:
-        raise SystemExit("missing save button")
+    if 'class="save"' in page or "📌 Save" in page:
+        raise SystemExit("save button must stay off")
     anchors = re.findall(r"<a\b[^>]*>", page)
     if not anchors or any(
         'target="_blank"' not in tag or 'rel="noopener noreferrer"' not in tag
