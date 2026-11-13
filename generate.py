@@ -7,6 +7,7 @@ Does not add or rewrite ordinary feed items. Every build includes:
 - an "Edit interests (curiosities.md)" link near the edition line and in the footer
 - the noindex robots meta tag
 - each item's save-to-Google-Tasks link (weather and markets omitted)
+- target="_blank" rel="noopener noreferrer" on every outbound anchor
 
 An item may include an optional summary string. When that string is non-empty,
 the page shows it as a paragraph directly under the item's title, link, and meta line.
@@ -103,6 +104,19 @@ def esc(value: str) -> str:
     return html.escape(value, quote=True)
 
 
+def outbound_link(href: str, inner: str, *, klass: str = "", title: str = "") -> str:
+    """Anchor that opens off-site. Every generated <a> goes through here."""
+    parts = ["<a"]
+    if klass:
+        parts.append(f'class="{esc(klass)}"')
+    parts.append(f'href="{esc(href)}"')
+    parts.append('target="_blank"')
+    parts.append('rel="noopener noreferrer"')
+    if title:
+        parts.append(f'title="{esc(title)}"')
+    return " ".join(parts) + f">{inner}</a>"
+
+
 def is_off_leash(item: dict) -> bool:
     title = item.get("title") or ""
     source = item.get("source") or ""
@@ -135,8 +149,13 @@ def save_html(item: dict) -> str:
     text = f"{verb} {item['url']} — {item['title']}"
     href = "https://t.me/TomGOpenClaw_bot?text=" + quote(text, safe="/")
     return (
-        f' · <a class="save" href="{esc(href)}" target="_blank" rel="noopener noreferrer" '
-        f'title="Save to Google Tasks ({queue})">📌 Save</a>'
+        " · "
+        + outbound_link(
+            href,
+            "📌 Save",
+            klass="save",
+            title=f"Save to Google Tasks ({queue})",
+        )
     )
 
 
@@ -201,9 +220,11 @@ def render_item(item: dict) -> str:
     summary_html = ""
     if isinstance(summary, str) and summary.strip():
         summary_html = f'\n      <p class="summary">{esc(summary.strip())}</p>'
+    title_link = outbound_link(url, esc(title))
+    source_link = outbound_link(url, esc(url), klass="url")
     return f'''    <article class="{klass}" data-item-url="{esc(url)}">
-      <h2 class="headline"><a href="{esc(url)}">{esc(title)}</a></h2>
-      <p class="meta"><time class="rel-time" datetime="{esc(published)}">{esc(published)}</time> · <span class="source">{esc(source)}</span>{save_html(item)} · <a class="url" href="{esc(url)}">{esc(url)}</a></p>{summary_html}{body_html}
+      <h2 class="headline">{title_link}</h2>
+      <p class="meta"><time class="rel-time" datetime="{esc(published)}">{esc(published)}</time> · <span class="source">{esc(source)}</span>{save_html(item)} · {source_link}</p>{summary_html}{body_html}
     </article>'''
 
 
@@ -212,7 +233,7 @@ def render_page(feed: dict) -> str:
     edition = edition_line(generated)
     stamp = footer_stamp(generated)
     articles = "\n".join(render_item(item) for item in feed["items"])
-    edit = f'<a href="{esc(EDIT_URL)}">{esc(EDIT_LABEL)}</a>'
+    edit = outbound_link(EDIT_URL, esc(EDIT_LABEL))
     saved_json = json.dumps(INITIAL_SAVED, ensure_ascii=False)
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -405,6 +426,12 @@ def main() -> None:
         raise SystemExit("missing summary style")
     if 'class="save"' not in page:
         raise SystemExit("missing save button")
+    anchors = re.findall(r"<a\b[^>]*>", page)
+    if not anchors or any(
+        'target="_blank"' not in tag or 'rel="noopener noreferrer"' not in tag
+        for tag in anchors
+    ):
+        raise SystemExit("outbound link missing target=_blank")
     OUT_PATH.write_text(page)
     print(edition_line(parse_generated_at(str(feed["generated_at"]))))
     print(f"wrote {OUT_PATH.name} ({len(feed['items'])} items)")
