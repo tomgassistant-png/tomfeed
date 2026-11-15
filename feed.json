@@ -1,19 +1,89 @@
 {
-  "generated_at": "2026-11-14 02:04 UTC",
+  "generated_at": "2026-11-15 02:05 UTC",
   "items": [
     {
-      "title": "☁️ Herzliya: Cloudy, 19°C now (18–24°C today)",
+      "title": "⛅ Herzliya: Partly cloudy, 18°C now (18–24°C today)",
       "url": "https://wttr.in/Herzliya",
       "source": "wttr.in",
-      "published_at": "2026-11-14T02:04:00Z",
-      "added_at": "2026-11-14T02:04:00Z"
+      "published_at": "2026-11-15T02:05:04Z",
+      "added_at": "2026-11-15T02:05:04Z"
     },
     {
-      "title": "📈 S&P 500 7,561.67 (-0.40%) · Nasdaq 25,136.27 (-0.91%) · SPCX $139.11 (-0.59%) · NVDA $162.85 (-2.01%) · WTI $88.92 (+0.20%) · USD/ILS ₪3.211",
+      "title": "📈 S&P 500 7,561.67 (-0.40%) · Nasdaq 25,136.27 (-0.91%) · SPCX $139.11 (-0.59%) · NVDA $162.85 (-2.01%) · WTI $88.56 (-0.20%) · USD/ILS ₪3.211",
       "url": "https://finance.yahoo.com/quote/%5EGSPC",
       "source": "Yahoo Finance",
-      "published_at": "2026-11-14T02:04:00Z",
-      "added_at": "2026-11-14T02:04:00Z"
+      "published_at": "2026-11-15T02:05:04Z",
+      "added_at": "2026-11-15T02:05:04Z"
+    },
+    {
+      "title": "On the Brutality of Amdahl's Law",
+      "url": "https://www.lesswrong.com/posts/bMsQ44sKqrFWjuHPb/on-the-brutality-of-amdahl-s-law",
+      "source": "LessWrong",
+      "published_at": "2026-11-15T01:19:00Z",
+      "added_at": "2026-11-15T02:05:04Z"
+    },
+    {
+      "title": "SpaceX returned its Starship rocket on Saturday—but there's a catch",
+      "url": "https://arstechnica.com/space/2026/11/with-starship-catch-spacex-still-shows-it-can-dazzle-the-world/",
+      "source": "Ars Technica",
+      "published_at": "2026-11-15T00:40:00Z",
+      "added_at": "2026-11-15T02:05:04Z"
+    },
+    {
+      "title": "▶️ Rings Of Power Season 3 - Here We Go Again!",
+      "url": "https://www.youtube.com/watch?v=XdkF9BQBIsk",
+      "source": "YouTube · The Critical Drinker (Will Jordan)",
+      "published_at": "2026-11-14T18:00:00Z",
+      "added_at": "2026-11-15T02:05:04Z"
+    },
+    {
+      "title": "Following Yigael Yadin’s drawings of how ancient tefillin slips were folded",
+      "url": "https://x.com/AdlerYonatan/status/2121652720603983986",
+      "source": "X · Yonatan Adler",
+      "published_at": "2026-11-14T17:13:21Z",
+      "added_at": "2026-11-15T02:05:04Z"
+    },
+    {
+      "title": "Privatize Air Traffic Control, Redux",
+      "url": "https://marginalrevolution.com/marginalrevolution/2026/11/privatize-air-traffic-control-redux.html",
+      "source": "Marginal Revolution",
+      "published_at": "2026-11-14T12:16:03Z",
+      "added_at": "2026-11-15T02:05:04Z"
+    },
+    {
+      "title": "Jonathan Haidt on How To Lead a Happy Life",
+      "url": "https://www.persuasion.community/p/jonathan-haidt-3",
+      "source": "Persuasion",
+      "published_at": "2026-11-14T12:06:00Z",
+      "added_at": "2026-11-15T02:05:04Z"
+    },
+    {
+      "title": "Radiocast No. 7: Lessons of the Wandervogel",
+      "url": "https://www.wandervogel.art/p/radiocast-no-7-lessons-of-the-wandervogel",
+      "source": "Substack · Wandervogel",
+      "published_at": "2026-11-14T05:10:52Z",
+      "added_at": "2026-11-15T02:05:04Z"
+    },
+    {
+      "title": "▶️ Jensen OUT as Nvidia CEO: \"Spy\" Scandal, Export Restrictions, Market Impact",
+      "url": "https://www.youtube.com/watch?v=Uv2w4VTU-iQ",
+      "source": "YouTube · All-In Podcast",
+      "published_at": "2026-11-14T03:00:00Z",
+      "added_at": "2026-11-15T02:05:04Z"
+    },
+    {
+      "title": "The decline of conspiracy theories",
+      "url": "https://thecritic.co.uk/the-decline-of-conspiracy-theories/",
+      "source": "The Critic",
+      "published_at": "2026-11-14T02:00:00Z",
+      "added_at": "2026-11-15T02:05:04Z"
+    },
+    {
+      "title": "The Liberator, and other South African wines",
+      "url": "https://www.jancisrobinson.com/articles/liberator-and-other-south-african-wines",
+      "source": "Jancis Robinson",
+      "published_at": "2026-11-14T01:00:00Z",
+      "added_at": "2026-11-15T02:05:04Z"
     },
     {
       "title": "Zoomers want to be shocked",
@@ -23,11 +93,39 @@
       "added_at": "2026-11-14T02:04:00Z"
     },
     {
+      "title": "After MAGA, the Groypers",
+      "url": "https://unherd.com/2026/11/after-maga-the-groypers/",
+      "source": "UnHerd",
+      "published_at": "2026-11-14T00:01:00Z",
+      "added_at": "2026-11-15T02:05:04Z"
+    },
+    {
       "title": "Jensen Out, MATCH Act In?",
       "url": "https://www.chinatalk.media/p/jensen-out-match-act-in",
       "source": "ChinaTalk",
       "published_at": "2026-11-13T23:13:29Z",
       "added_at": "2026-11-14T02:04:00Z"
+    },
+    {
+      "title": "The Rare-Earth Game",
+      "url": "https://tippinsights.com/the-rare-earth-game/",
+      "source": "TIPP Insights",
+      "published_at": "2026-11-13T21:32:40Z",
+      "added_at": "2026-11-15T02:05:04Z"
+    },
+    {
+      "title": "FAA expands AI advice to manage air traffic congestion across entire US airspace",
+      "url": "https://arstechnica.com/features/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/",
+      "source": "Ars Technica",
+      "published_at": "2026-11-13T21:20:00Z",
+      "added_at": "2026-11-15T02:05:04Z"
+    },
+    {
+      "title": "Does Eisenkot Know Which Americans to Ignore?",
+      "url": "https://www.commentary.org/seth-mandel/does-eisenkot-know-which-americans-to-ignore/",
+      "source": "Commentary",
+      "published_at": "2026-11-13T21:03:00Z",
+      "added_at": "2026-11-15T02:05:04Z"
     },
     {
       "title": "What Public Health Initiatives Looked Like in the Middle Ages",
@@ -86,6 +184,13 @@
       "added_at": "2026-11-14T02:04:00Z"
     },
     {
+      "title": "Liberals Are Wrong to Fear the Internet",
+      "url": "https://www.persuasion.community/p/no-social-media-isnt-destroying-democracy",
+      "source": "Persuasion",
+      "published_at": "2026-11-13T12:15:00Z",
+      "added_at": "2026-11-15T02:05:04Z"
+    },
+    {
       "title": "Netanyahu Has Nothing Left to Offer",
       "url": "https://newsletter.amitsegal.net/p/its-noon-in-israel-netanyahu-has",
       "source": "Substack · It's Noon In Israel",
@@ -106,6 +211,13 @@
       "source": "Ars Technica",
       "published_at": "2026-11-13T12:00:40Z",
       "added_at": "2026-11-14T02:04:00Z"
+    },
+    {
+      "title": "Yesterday’s Man",
+      "url": "https://www.compactmag.com/article/yesterdays-man/",
+      "source": "Compact",
+      "published_at": "2026-11-13T12:00:00Z",
+      "added_at": "2026-11-15T02:05:04Z"
     },
     {
       "title": "Fugitive imagination",
@@ -136,6 +248,20 @@
       "added_at": "2026-11-14T02:04:00Z"
     },
     {
+      "title": "Zionism for France",
+      "url": "https://firstthings.com/zionism-for-france/",
+      "source": "First Things",
+      "published_at": "2026-11-13T06:00:00Z",
+      "added_at": "2026-11-15T02:05:04Z"
+    },
+    {
+      "title": "Greenland and the End of Arctic Exceptionalism: Alternative Coalitions for Governance in a Fragmenting International Order",
+      "url": "https://www.globalpolicyjournal.com/blog/13/11/2026/greenland-and-end-arctic-exceptionalism-alternative-coalitions-governance",
+      "source": "Global Policy Journal",
+      "published_at": "2026-11-13T00:00:00Z",
+      "added_at": "2026-11-15T02:05:04Z"
+    },
+    {
       "title": "Your Research Needs More of The Void",
       "url": "https://www.lesswrong.com/posts/bmogjuWbrJfkprghx/your-research-needs-more-of-the-void",
       "source": "LessWrong",
@@ -155,6 +281,20 @@
       "source": "YouTube · Israel Update (Michael Doran & Gadi Taub)",
       "published_at": "2026-11-12T22:58:00Z",
       "added_at": "2026-11-13T02:04:20Z"
+    },
+    {
+      "title": "Vance Lost His Iran Talks Because He Became a Figure of Ridicule in Tehran",
+      "url": "https://www.commentary.org/seth-mandel/vance-lost-his-iran-talks-because-he-became-a-figure-of-ridicule-in-tehran/",
+      "source": "Commentary",
+      "published_at": "2026-11-12T20:03:00Z",
+      "added_at": "2026-11-15T02:05:04Z"
+    },
+    {
+      "title": "Can Network Science Transform Health and Nutrition?",
+      "url": "https://www.quantamagazine.org/can-network-science-transform-health-and-nutrition-20261112/",
+      "source": "Quanta Magazine",
+      "published_at": "2026-11-12T19:40:00Z",
+      "added_at": "2026-11-15T02:05:04Z"
     },
     {
       "title": "A Generation Revolts",
@@ -197,142 +337,9 @@
       "source": "Compact",
       "published_at": "2026-11-12T12:00:00Z",
       "added_at": "2026-11-13T02:04:20Z"
-    },
-    {
-      "title": "A short history of the honey trap",
-      "url": "https://engelsbergideas.com/notebook/a-short-history-of-the-honey-trap",
-      "source": "Engelsberg Ideas",
-      "published_at": "2026-11-12T11:28:16Z",
-      "added_at": "2026-11-13T02:04:20Z"
-    },
-    {
-      "title": "Why anything exists",
-      "url": "https://aeon.co/essays/a-new-answer-to-why-there-is-something-rather-than-nothing",
-      "source": "Aeon",
-      "published_at": "2026-11-12T11:00:00Z",
-      "added_at": "2026-11-13T02:04:20Z"
-    },
-    {
-      "title": "Why AI and Consciousness May Never Meet",
-      "url": "https://thereader.mitpress.mit.edu/why-ai-and-consciousness-may-never-meet",
-      "source": "MIT Press Reader",
-      "published_at": "2026-11-12T10:55:00Z",
-      "added_at": "2026-11-13T02:04:20Z"
-    },
-    {
-      "title": "#102. Why Your Wife Starts Treating You Like the Enemy",
-      "url": "https://hannahspier.substack.com/p/102-why-your-wife-starts-treating",
-      "source": "Substack · Psychobabble",
-      "published_at": "2026-11-12T10:50:50Z",
-      "added_at": "2026-11-13T02:04:20Z"
-    },
-    {
-      "title": "Tefillin are written on qelef, the ultra-thin upper layer of animal skin",
-      "url": "https://x.com/AdlerYonatan/status/2120816509798740357",
-      "source": "X · Yonatan Adler",
-      "published_at": "2026-11-12T09:50:33Z",
-      "added_at": "2026-11-13T02:04:20Z"
-    },
-    {
-      "title": "Capital Wines: Why Madrid is Spain's next hot wine spot",
-      "url": "https://www.decanter.com/wine/spain/capital-wines-why-madrid-is-spains-next-hot-wine-spot",
-      "source": "Decanter",
-      "published_at": "2026-11-12T08:58:50Z",
-      "added_at": "2026-11-13T02:04:20Z"
-    },
-    {
-      "title": "The finishing touch: How aged tequila is being transformed",
-      "url": "https://www.decanter.com/spirits/tequila/the-finishing-touch-how-aged-tequila-is-being-transformed/",
-      "source": "Decanter",
-      "published_at": "2026-11-12T08:00:00Z",
-      "added_at": "2026-11-14T02:04:00Z"
-    },
-    {
-      "title": "After Disenchantment",
-      "url": "https://firstthings.com/after-disenchantment",
-      "source": "First Things",
-      "published_at": "2026-11-12T06:00:00Z",
-      "added_at": "2026-11-13T02:04:20Z"
-    },
-    {
-      "title": "The rise and fall of the Spanish anarchists, 1868-1937",
-      "url": "https://www.historyworkshop.org.uk/anti-fascism/the-rise-and-fall-of-the-spanish-anarchists-1868-1937/",
-      "source": "History Workshop",
-      "published_at": "2026-11-12T05:45:00Z",
-      "added_at": "2026-11-14T02:04:00Z"
-    },
-    {
-      "title": "My excellent Conversation with Terence Tao",
-      "url": "https://marginalrevolution.com/marginalrevolution/2026/11/my-excellent-conversation-with-terence-tao.html",
-      "source": "Marginal Revolution",
-      "published_at": "2026-11-12T05:44:38Z",
-      "added_at": "2026-11-13T02:04:20Z"
-    },
-    {
-      "title": "Guatemala and the gringos",
-      "url": "https://thecritic.co.uk/guatemala-and-the-gringos/",
-      "source": "The Critic",
-      "published_at": "2026-11-12T02:00:32Z",
-      "added_at": "2026-11-13T02:12:19Z"
-    },
-    {
-      "title": "The war against Michel Houellebecq",
-      "url": "https://unherd.com/2026/11/the-war-against-michel-houellebecq",
-      "source": "UnHerd",
-      "published_at": "2026-11-12T00:03:04Z",
-      "added_at": "2026-11-13T02:04:20Z"
-    },
-    {
-      "title": "John Betjeman",
-      "url": "https://thecritic.co.uk/issues/november-2026/john-betjeman/",
-      "source": "The Critic",
-      "published_at": "2026-11-12T00:00:00Z",
-      "added_at": "2026-11-13T02:12:19Z"
-    },
-    {
-      "title": "The Four Forces That Shape Collective Memory",
-      "url": "https://nautil.us/the-four-forces-that-shape-collective-memory-1286569/",
-      "source": "Nautilus",
-      "published_at": "2026-11-11T21:00:00Z",
-      "added_at": "2026-11-12T02:00:42Z"
-    },
-    {
-      "title": "Soldiers of Misfortune: The Drawings of Urs Graf the Elder",
-      "url": "https://publicdomainreview.org/essay/soldiers-of-misfortune",
-      "source": "Public Domain Review",
-      "published_at": "2026-11-11T18:29:00Z",
-      "added_at": "2026-11-12T02:00:42Z"
-    },
-    {
-      "title": "EPISODE 227: POLITICAL MIX",
-      "url": "https://www.bronzeagepervert.yoga/p/episode-227-political-mix",
-      "source": "Substack · Magenta Notebooks",
-      "published_at": "2026-11-11T18:01:16Z",
-      "added_at": "2026-11-12T02:00:42Z"
-    },
-    {
-      "title": "Here’s Why It’s So Hard to Boost a Satellite",
-      "url": "https://nautil.us/heres-why-its-so-hard-to-boost-a-satellite-1286550/",
-      "source": "Nautilus",
-      "published_at": "2026-11-11T17:00:00Z",
-      "added_at": "2026-11-12T02:00:42Z"
-    },
-    {
-      "title": "The Triumph of Labour: Walter Crane’s Cartoons for the Cause (1896)",
-      "url": "https://publicdomainreview.org/collection/walter-crane-cartoons-for-the-cause",
-      "source": "Public Domain Review",
-      "published_at": "2026-11-11T14:49:00Z",
-      "added_at": "2026-11-12T02:00:42Z"
-    },
-    {
-      "title": "Beyond the Plantation House",
-      "url": "https://daily.jstor.org/beyond-the-plantation-house",
-      "source": "JSTOR Daily",
-      "published_at": "2026-11-11T14:34:00Z",
-      "added_at": "2026-11-13T02:04:20Z"
     }
   ],
   "_meta": {
-    "last_updated": "2026-11-14T02:04:00Z"
+    "last_updated": "2026-11-15T02:05:04Z"
   }
 }
