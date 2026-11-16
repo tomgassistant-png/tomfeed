@@ -1,19 +1,89 @@
 {
-  "generated_at": "2026-11-15 02:05 UTC",
+  "generated_at": "2026-11-16 02:06 UTC",
   "items": [
     {
-      "title": "⛅ Herzliya: Partly cloudy, 18°C now (18–24°C today)",
+      "title": "⛅ Herzliya: Partly cloudy, 18°C now (18–23°C today)",
       "url": "https://wttr.in/Herzliya",
       "source": "wttr.in",
-      "published_at": "2026-11-15T02:05:04Z",
-      "added_at": "2026-11-15T02:05:04Z"
+      "published_at": "2026-11-16T02:06:40Z",
+      "added_at": "2026-11-16T02:06:40Z"
     },
     {
-      "title": "📈 S&P 500 7,561.67 (-0.40%) · Nasdaq 25,136.27 (-0.91%) · SPCX $139.11 (-0.59%) · NVDA $162.85 (-2.01%) · WTI $88.56 (-0.20%) · USD/ILS ₪3.211",
+      "title": "📈 S&P 500 7,561.67 (-0.40%) · Nasdaq 25,136.27 (-0.91%) · SPCX $139.11 (-0.59%) · NVDA $162.85 (-2.01%) · WTI $88.30 (-0.29%) · USD/ILS ₪3.216",
       "url": "https://finance.yahoo.com/quote/%5EGSPC",
       "source": "Yahoo Finance",
-      "published_at": "2026-11-15T02:05:04Z",
-      "added_at": "2026-11-15T02:05:04Z"
+      "published_at": "2026-11-16T02:06:40Z",
+      "added_at": "2026-11-16T02:06:40Z"
+    },
+    {
+      "title": "Week In Review 11/15: The Fallen King",
+      "url": "https://mtslive.substack.com/p/week-in-review-1115-the-fallen-king",
+      "source": "Substack · MTS",
+      "published_at": "2026-11-16T00:20:46Z",
+      "added_at": "2026-11-16T02:06:40Z"
+    },
+    {
+      "title": "Why America can't keep China down",
+      "url": "https://unherd.com/2026/11/why-america-cant-keep-china-down",
+      "source": "UnHerd",
+      "published_at": "2026-11-16T00:03:49Z",
+      "added_at": "2026-11-16T02:06:40Z"
+    },
+    {
+      "title": "How Does A Hypersonic Aircraft Like The Stratolaunch Talon-A Actually Fly At Mach 5?",
+      "url": "https://simpleflying.com/how-stratolaunch-talon-a-flies-mach-5/",
+      "source": "Simple Flying",
+      "published_at": "2026-11-15T22:00:17Z",
+      "added_at": "2026-11-16T02:06:40Z"
+    },
+    {
+      "title": "Denying Hezbollah capabilities, not the illusion of deterrence, is the goal",
+      "url": "https://www.israelnationalnews.com/news/436245",
+      "source": "Israel National News",
+      "published_at": "2026-11-15T16:56:48Z",
+      "added_at": "2026-11-16T02:06:40Z"
+    },
+    {
+      "title": "Asia’s Future Beyond U.S.-China Competition: Evan Feigenbaum’s Ottawa Keynote",
+      "url": "https://www.sinicapodcast.com/p/asias-future-beyond-us-china-competition",
+      "source": "Sinica",
+      "published_at": "2026-11-15T14:21:11Z",
+      "added_at": "2026-11-16T02:06:40Z"
+    },
+    {
+      "title": "How Wealth Inequality Emerged in This Prehistoric Culture",
+      "url": "https://nautil.us/how-wealth-inequality-emerged-in-this-prehistoric-culture-1286642/",
+      "source": "Nautilus",
+      "published_at": "2026-11-15T13:00:00Z",
+      "added_at": "2026-11-16T02:06:40Z"
+    },
+    {
+      "title": "It’s Noon in Israel: The First Step Toward Unity?",
+      "url": "https://newsletter.amitsegal.net/p/its-noon-in-israel-the-first-step",
+      "source": "Substack · It's Noon In Israel",
+      "published_at": "2026-11-15T12:03:27Z",
+      "added_at": "2026-11-16T02:06:40Z"
+    },
+    {
+      "title": "Where Have All the Boys’ Books Gone?",
+      "url": "https://www.nationalreview.com/article/where-have-all-the-boys-books-gone",
+      "source": "National Review",
+      "published_at": "2026-11-15T11:00:00Z",
+      "added_at": "2026-11-16T02:06:40Z"
+    },
+    {
+      "title": "A banana republic in the Arctic",
+      "url": "https://latinoamerica21.com/en/a-banana-republic-in-the-arctic/",
+      "source": "Latinoamérica 21",
+      "published_at": "2026-11-15T10:00:00Z",
+      "added_at": "2026-11-16T02:06:40Z"
+    },
+    {
+      "title": "Updown's upward journey",
+      "url": "https://www.jancisrobinson.com/articles/updowns-upward-journey",
+      "source": "Jancis Robinson",
+      "published_at": "2026-11-15T08:45:00Z",
+      "added_at": "2026-11-16T02:06:40Z"
     },
     {
       "title": "On the Brutality of Amdahl's Law",
@@ -30,6 +100,13 @@
       "added_at": "2026-11-15T02:05:04Z"
     },
     {
+      "title": "The Aramaic of the Christ",
+      "url": "https://languagehat.com/the-aramaic-of-the-christ/",
+      "source": "Languagehat",
+      "published_at": "2026-11-14T20:57:54Z",
+      "added_at": "2026-11-16T02:06:40Z"
+    },
+    {
       "title": "▶️ Rings Of Power Season 3 - Here We Go Again!",
       "url": "https://www.youtube.com/watch?v=XdkF9BQBIsk",
       "source": "YouTube · The Critical Drinker (Will Jordan)",
@@ -44,6 +121,20 @@
       "added_at": "2026-11-15T02:05:04Z"
     },
     {
+      "title": "A Chemical Fingerprint in Ancient Rocks Suggests Plate Tectonics Began 2.5 Billion Years Ago",
+      "url": "https://nautil.us/a-chemical-fingerprint-in-ancient-rocks-suggests-plate-tectonics-began-2-5-billion-years-ago-1286624/",
+      "source": "Nautilus",
+      "published_at": "2026-11-14T13:00:00Z",
+      "added_at": "2026-11-16T02:06:40Z"
+    },
+    {
+      "title": "Open-source AI without Jensen",
+      "url": "https://www.interconnects.ai/p/open-source-ai-without-jensen",
+      "source": "Interconnects",
+      "published_at": "2026-11-14T12:23:15Z",
+      "added_at": "2026-11-16T02:06:40Z"
+    },
+    {
       "title": "Privatize Air Traffic Control, Redux",
       "url": "https://marginalrevolution.com/marginalrevolution/2026/11/privatize-air-traffic-control-redux.html",
       "source": "Marginal Revolution",
@@ -56,6 +147,20 @@
       "source": "Persuasion",
       "published_at": "2026-11-14T12:06:00Z",
       "added_at": "2026-11-15T02:05:04Z"
+    },
+    {
+      "title": "Were we wrong about \"nor'easter\"?",
+      "url": "https://languagelog.ldc.upenn.edu/nll/?p=74581",
+      "source": "Language Log",
+      "published_at": "2026-11-14T12:01:08Z",
+      "added_at": "2026-11-16T02:06:40Z"
+    },
+    {
+      "title": "Israel’s Arab Parties Face a Difficult Bargain",
+      "url": "https://www.nationalreview.com/article/israel-s-arab-parties-face-a-difficult-bargain",
+      "source": "National Review",
+      "published_at": "2026-11-14T11:00:00Z",
+      "added_at": "2026-11-16T02:06:40Z"
     },
     {
       "title": "Radiocast No. 7: Lessons of the Wandervogel",
@@ -135,11 +240,25 @@
       "added_at": "2026-11-14T02:04:00Z"
     },
     {
+      "title": "Defending the Dilettante",
+      "url": "https://languagehat.com/defending-the-dilettante/",
+      "source": "Languagehat",
+      "published_at": "2026-11-13T20:58:16Z",
+      "added_at": "2026-11-16T02:06:40Z"
+    },
+    {
       "title": "What Havel Teaches Us About Freedom",
       "url": "https://www.persuasion.community/p/what-havel-teaches-us-about-freedom",
       "source": "Persuasion",
       "published_at": "2026-11-13T20:20:27Z",
       "added_at": "2026-11-14T02:04:00Z"
+    },
+    {
+      "title": "Trump and Xi Can Reopen Trade. But for Whom?",
+      "url": "https://thediplomat.com/2026/11/trump-and-xi-can-reopen-trade-but-for-whom/",
+      "source": "The Diplomat",
+      "published_at": "2026-11-13T19:17:00Z",
+      "added_at": "2026-11-16T02:06:40Z"
     },
     {
       "title": "Are we witnessing an intelligence explosion?",
@@ -149,11 +268,25 @@
       "added_at": "2026-11-14T02:04:00Z"
     },
     {
+      "title": "The avalanche that hit math is coming for AI development",
+      "url": "https://www.dwarkesh.com/p/rsi",
+      "source": "Dwarkesh",
+      "published_at": "2026-11-13T18:37:51Z",
+      "added_at": "2026-11-16T02:06:40Z"
+    },
+    {
       "title": "A Movement Is Not Enough",
       "url": "https://www.palladiummag.com/2026/11/13/a-movement-is-not-enough/",
       "source": "Palladium",
       "published_at": "2026-11-13T18:26:32Z",
       "added_at": "2026-11-14T02:04:00Z"
+    },
+    {
+      "title": "Will AI Change North Korea’s Nuclear Calculus?",
+      "url": "https://thediplomat.com/2026/11/will-ai-change-north-koreas-nuclear-calculus/",
+      "source": "The Diplomat",
+      "published_at": "2026-11-13T18:23:00Z",
+      "added_at": "2026-11-16T02:06:40Z"
     },
     {
       "title": "Serbia’s Experiment: Combining Democracy & Meritocracy",
@@ -204,142 +337,9 @@
       "published_at": "2026-11-13T12:03:00Z",
       "summary": "A Federal Reserve study, as Peter St. Onge presents it, finds households over 75 got almost 40 percent wealthier in the last three years, to a record median of about half a million dollars, while households under 35 lost a quarter of their wealth, down to about $33,000, after inflation. He argues the Fed's near-zero rates and heavy asset buying during Covid sent houses and stocks up for people who already owned them, then higher rates left existing owners with cheap mortgages and first-time buyers with much larger payments. Nearly 20 percent of families reported a late loan payment in 2025, up from 12 percent in 2022, and the share spending at least 40 percent of income on debt rose to 8.6 percent. He says this is not seniors' fault: they saved and invested, while Social Security, on his account, returned far less than a privately owned IRA would have. His remedy is to end the cycle of deficits, asset inflation, and emergency rate hikes rather than tax older households to close the gap.",
       "added_at": "2026-11-14T02:04:00Z"
-    },
-    {
-      "title": "Rocket Report: Starship set for historic test flight; a century of Electron",
-      "url": "https://arstechnica.com/space/2026/11/rocket-report-starship-set-for-historic-test-flight-a-century-of-electron/",
-      "source": "Ars Technica",
-      "published_at": "2026-11-13T12:00:40Z",
-      "added_at": "2026-11-14T02:04:00Z"
-    },
-    {
-      "title": "Yesterday’s Man",
-      "url": "https://www.compactmag.com/article/yesterdays-man/",
-      "source": "Compact",
-      "published_at": "2026-11-13T12:00:00Z",
-      "added_at": "2026-11-15T02:05:04Z"
-    },
-    {
-      "title": "Fugitive imagination",
-      "url": "https://aeon.co/essays/those-forced-to-cross-borders-are-imagining-a-radical-new-world",
-      "source": "Aeon",
-      "published_at": "2026-11-13T11:00:00Z",
-      "added_at": "2026-11-14T02:04:00Z"
-    },
-    {
-      "title": "Nasser’s long road to Suez",
-      "url": "https://engelsbergideas.com/essays/nassers-long-road-to-suez/",
-      "source": "Engelsberg Ideas",
-      "published_at": "2026-11-13T08:22:10Z",
-      "added_at": "2026-11-14T02:04:00Z"
-    },
-    {
-      "title": "Miyazaki’s Swiftian skies",
-      "url": "https://engelsbergideas.com/notebook/miyazakis-swiftian-skies/",
-      "source": "Engelsberg Ideas",
-      "published_at": "2026-11-13T08:18:08Z",
-      "added_at": "2026-11-14T02:04:00Z"
-    },
-    {
-      "title": "The Politics of Lovingkindness",
-      "url": "https://firstthings.com/the-politics-of-lovingkindness/",
-      "source": "First Things",
-      "published_at": "2026-11-13T06:00:00Z",
-      "added_at": "2026-11-14T02:04:00Z"
-    },
-    {
-      "title": "Zionism for France",
-      "url": "https://firstthings.com/zionism-for-france/",
-      "source": "First Things",
-      "published_at": "2026-11-13T06:00:00Z",
-      "added_at": "2026-11-15T02:05:04Z"
-    },
-    {
-      "title": "Greenland and the End of Arctic Exceptionalism: Alternative Coalitions for Governance in a Fragmenting International Order",
-      "url": "https://www.globalpolicyjournal.com/blog/13/11/2026/greenland-and-end-arctic-exceptionalism-alternative-coalitions-governance",
-      "source": "Global Policy Journal",
-      "published_at": "2026-11-13T00:00:00Z",
-      "added_at": "2026-11-15T02:05:04Z"
-    },
-    {
-      "title": "Your Research Needs More of The Void",
-      "url": "https://www.lesswrong.com/posts/bmogjuWbrJfkprghx/your-research-needs-more-of-the-void",
-      "source": "LessWrong",
-      "published_at": "2026-11-12T23:41:00Z",
-      "added_at": "2026-11-13T02:04:20Z"
-    },
-    {
-      "title": "AI Company Employees Should Unionize",
-      "url": "https://www.astralcodexten.com/p/ai-company-employees-should-unionize",
-      "source": "Astral Codex Ten",
-      "published_at": "2026-11-12T23:09:15Z",
-      "added_at": "2026-11-13T02:04:20Z"
-    },
-    {
-      "title": "▶️ COALITION BUILDING: BEHIND THE SCENES",
-      "url": "https://www.youtube.com/watch?v=msJqo32gLwI",
-      "source": "YouTube · Israel Update (Michael Doran & Gadi Taub)",
-      "published_at": "2026-11-12T22:58:00Z",
-      "added_at": "2026-11-13T02:04:20Z"
-    },
-    {
-      "title": "Vance Lost His Iran Talks Because He Became a Figure of Ridicule in Tehran",
-      "url": "https://www.commentary.org/seth-mandel/vance-lost-his-iran-talks-because-he-became-a-figure-of-ridicule-in-tehran/",
-      "source": "Commentary",
-      "published_at": "2026-11-12T20:03:00Z",
-      "added_at": "2026-11-15T02:05:04Z"
-    },
-    {
-      "title": "Can Network Science Transform Health and Nutrition?",
-      "url": "https://www.quantamagazine.org/can-network-science-transform-health-and-nutrition-20261112/",
-      "source": "Quanta Magazine",
-      "published_at": "2026-11-12T19:40:00Z",
-      "added_at": "2026-11-15T02:05:04Z"
-    },
-    {
-      "title": "A Generation Revolts",
-      "url": "https://www.noemamag.com/a-generation-revolts",
-      "source": "Noema",
-      "published_at": "2026-11-12T17:38:28Z",
-      "added_at": "2026-11-13T02:04:20Z"
-    },
-    {
-      "title": "The Evolving Story of How Chemistry Became Biology",
-      "url": "https://www.quantamagazine.org/the-evolving-story-of-how-chemistry-became-biology-20261112",
-      "source": "Quanta Magazine",
-      "published_at": "2026-11-12T15:45:27Z",
-      "added_at": "2026-11-13T02:04:20Z"
-    },
-    {
-      "title": "Introducing: Qualiaphobic AI",
-      "url": "https://www.theintrinsicperspective.com/p/introducing-qualiaphobic-ai",
-      "source": "The Intrinsic Perspective",
-      "published_at": "2026-11-12T15:30:36Z",
-      "added_at": "2026-11-13T02:04:20Z"
-    },
-    {
-      "title": "▶️ James Gunn's DCU - Where Did It All Go Wrong?",
-      "url": "https://www.youtube.com/watch?v=8oG6Fil7dwo",
-      "source": "YouTube · The Critical Drinker (Will Jordan)",
-      "published_at": "2026-11-12T14:58:00Z",
-      "added_at": "2026-11-13T02:04:20Z"
-    },
-    {
-      "title": "Technology as a Search Problem",
-      "url": "https://www.construction-physics.com/p/technology-as-a-search-problem",
-      "source": "Construction Physics",
-      "published_at": "2026-11-12T13:01:45Z",
-      "added_at": "2026-11-14T02:04:00Z"
-    },
-    {
-      "title": "Alex Karp, Cold War Liberal",
-      "url": "https://www.compactmag.com/article/alex-karp-cold-war-liberal",
-      "source": "Compact",
-      "published_at": "2026-11-12T12:00:00Z",
-      "added_at": "2026-11-13T02:04:20Z"
     }
   ],
   "_meta": {
-    "last_updated": "2026-11-15T02:05:04Z"
+    "last_updated": "2026-11-16T02:06:40Z"
   }
 }
