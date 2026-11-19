@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-19 02:10 UTC",
+  "generated_at": "2026-11-19 04:35 UTC",
   "items": [
     {
-      "title": "☁️ Herzliya: Cloudy, 17°C now (16–23°C today)",
+      "title": "☁️ Herzliya: Partly Cloudy, 17°C now (16–23°C today)",
       "url": "https://wttr.in/Herzliya",
       "source": "wttr.in",
-      "published_at": "2026-11-19T02:10:57Z",
-      "added_at": "2026-11-19T02:10:57Z"
+      "published_at": "2026-11-19T04:35:13Z",
+      "added_at": "2026-11-19T04:35:13Z"
     },
     {
-      "title": "📈 S&P 500 7,323.63 (-0.23%) · Nasdaq 24,429.89 (+0.42%) · SPCX $143.50 (+1.27%) · NVDA $150.96 (-2.89%) · WTI $83.84 (+0.70%) · USD/ILS ₪3.276",
+      "title": "📈 S&P 500 7,323.63 (-0.23%) · Nasdaq 24,429.89 (+0.42%) · SPCX $143.50 (+1.27%) · NVDA $150.96 (-2.89%) · WTI $82.10 (-1.39%) · USD/ILS ₪3.278",
       "url": "https://finance.yahoo.com/quote/%5EGSPC",
       "source": "Yahoo Finance",
-      "published_at": "2026-11-19T02:10:57Z",
-      "added_at": "2026-11-19T02:10:57Z"
+      "published_at": "2026-11-19T04:35:13Z",
+      "added_at": "2026-11-19T04:35:13Z"
     },
     {
       "title": "Why The World's Debut Boeing 747 Was Built In Half The Time Of Other Aircraft Of Its Size In 1968",
@@ -30,6 +30,13 @@
       "added_at": "2026-11-19T02:10:57Z"
     },
     {
+      "title": "Evaluation Awareness is Probably Distorting Monitor Evaluations",
+      "url": "https://www.lesswrong.com/posts/cZPQsTKDwgtvF8sjt/evaluation-awareness-is-probably-distorting-monitor",
+      "source": "LessWrong",
+      "published_at": "2026-11-19T00:34:41Z",
+      "added_at": "2026-11-19T04:35:13Z"
+    },
+    {
       "title": "Homo Erectus Adopted a Jungle Lifestyle 200,000 Years Ago",
       "url": "https://nautil.us/homo-erectus-adopted-a-jungle-lifestyle-200000-years-ago-1286783/",
       "source": "Nautilus",
@@ -37,11 +44,25 @@
       "added_at": "2026-11-19T02:10:57Z"
     },
     {
+      "title": "Miniatures from Christine de Pizan’s Epistle of Othea (ca. 1460)",
+      "url": "https://publicdomainreview.org/collection/epistle-of-othea",
+      "source": "Public Domain Review",
+      "published_at": "2026-11-18T19:29:00Z",
+      "added_at": "2026-11-19T04:35:13Z"
+    },
+    {
       "title": "The Speech Patterns of Psychoses",
       "url": "https://nautil.us/the-speech-patterns-of-psychoses-1286780/",
       "source": "Nautilus",
       "published_at": "2026-11-18T19:00:00Z",
       "added_at": "2026-11-19T02:10:57Z"
+    },
+    {
+      "title": "The Most Confusing Fact About Climate Change",
+      "url": "https://www.persuasion.community/p/a-whole-other-climate-change",
+      "source": "Persuasion",
+      "published_at": "2026-11-18T18:02:09Z",
+      "added_at": "2026-11-19T04:35:13Z"
     },
     {
       "title": "What China’s Gene-Editing Deaths Reveal About Its Biotech Industry",
@@ -65,6 +86,20 @@
       "added_at": "2026-11-19T02:10:57Z"
     },
     {
+      "title": "How M.C. Escher’s Art Creates Bizarre Mathematical Worlds",
+      "url": "https://www.quantamagazine.org/how-m-c-eschers-art-creates-bizarre-mathematical-worlds-20261118/",
+      "source": "Quanta Magazine",
+      "published_at": "2026-11-18T15:51:40Z",
+      "added_at": "2026-11-19T04:35:13Z"
+    },
+    {
+      "title": "Taking Nathan Cofnas seriously",
+      "url": "https://thecritic.co.uk/taking-nathan-cofnas-seriously/",
+      "source": "The Critic",
+      "published_at": "2026-11-18T12:38:22Z",
+      "added_at": "2026-11-19T04:35:13Z"
+    },
+    {
       "title": "Was Achilles Conscious?",
       "url": "https://marginalrevolution.com/marginalrevolution/2026/11/was-achilles-conscious.html",
       "source": "Marginal Revolution",
@@ -86,60 +121,25 @@
       "added_at": "2026-11-19T02:10:57Z"
     },
     {
-      "title": "How “Essential Vocabulary” Changed.",
-      "url": "https://languagehat.com/how-essential-vocabulary-changed/",
-      "source": "Languagehat",
-      "published_at": "2026-11-17T20:51:33Z",
-      "added_at": "2026-11-19T02:10:57Z"
-    },
-    {
-      "title": "The Forgotten Socialist",
-      "url": "https://www.compactmag.com/article/the-forgotten-socialist/",
+      "title": "Why the Democratic Party Dominates",
+      "url": "https://www.compactmag.com/article/why-the-democratic-party-dominates/",
       "source": "Compact",
-      "published_at": "2026-11-17T12:44:02Z",
-      "added_at": "2026-11-19T02:10:57Z"
+      "published_at": "2026-11-18T12:00:00Z",
+      "added_at": "2026-11-19T04:35:13Z"
     },
     {
-      "title": "What Makes Up the Cosmos? A 20-Year Survey Hints That Something Is Missing.",
-      "url": "https://www.quantamagazine.org/what-makes-up-the-cosmos-a-20-year-survey-hints-that-something-is-missing-20261116/",
-      "source": "Quanta Magazine",
-      "published_at": "2026-11-16T15:15:33Z",
-      "added_at": "2026-11-19T02:10:57Z"
+      "title": "What does it mean to be “laser-focused on affordability”?",
+      "url": "https://www.slowboring.com/p/what-does-it-mean-to-be-laser-focused",
+      "source": "Slow Boring",
+      "published_at": "2026-11-18T11:03:10Z",
+      "added_at": "2026-11-19T04:35:13Z"
     },
     {
-      "title": "A New Era for the Dawn of Life",
-      "url": "https://www.quantamagazine.org/a-new-era-for-the-dawn-of-life-20261112/",
-      "source": "Quanta Magazine",
-      "published_at": "2026-11-12T16:20:28Z",
-      "added_at": "2026-11-19T02:10:57Z"
-    },
-    {
-      "title": "The Art and Science of Disney’s Fantasia",
-      "url": "https://daily.jstor.org/the-art-and-science-of-disneys-fantasia/",
-      "source": "JSTOR Daily",
-      "published_at": "2026-11-05T14:54:52Z",
-      "added_at": "2026-11-19T02:10:57Z"
-    },
-    {
-      "title": "How to Turn a Philanderer Into a Father",
-      "url": "https://asteriskmag.com/issues/16/how-to-turn-a-philanderer-into-a-father",
-      "source": "Asterisk",
-      "published_at": "2026-11-03T00:00:00Z",
-      "added_at": "2026-11-19T02:10:57Z"
-    },
-    {
-      "title": "Love with nowhere to go",
-      "url": "https://aeon.co/essays/we-need-a-language-to-name-the-grief-that-comes-without-death",
-      "source": "Aeon",
-      "published_at": "2026-10-27T10:00:00Z",
-      "added_at": "2026-11-19T02:10:57Z"
-    },
-    {
-      "title": "Why Don’t We Live in an Art Nouveau World?",
-      "url": "https://asteriskmag.com/issues/16/why-don-t-we-life-in-an-art-nouveau-world",
-      "source": "Asterisk",
-      "published_at": "2026-10-27T00:00:00Z",
-      "added_at": "2026-11-19T02:10:57Z"
+      "title": "Actually Existing Literary Martyrdom",
+      "url": "https://firstthings.com/actually-existing-literary-martyrdom/",
+      "source": "First Things",
+      "published_at": "2026-11-18T06:00:00Z",
+      "added_at": "2026-11-19T04:35:13Z"
     },
     {
       "title": "Inside the AI surveillance state",
@@ -163,6 +163,13 @@
       "added_at": "2026-11-18T02:04:46Z"
     },
     {
+      "title": "How “Essential Vocabulary” Changed.",
+      "url": "https://languagehat.com/how-essential-vocabulary-changed/",
+      "source": "Languagehat",
+      "published_at": "2026-11-17T20:51:33Z",
+      "added_at": "2026-11-19T02:10:57Z"
+    },
+    {
       "title": "The data is very preliminary, but Vulcan failure may not be due to BE-4 engines",
       "url": "https://arstechnica.com/features/2026/11/sources-vulcan-launch-anomaly-investigation-is-complex/",
       "source": "Ars Technica",
@@ -184,6 +191,13 @@
       "added_at": "2026-11-18T02:04:46Z"
     },
     {
+      "title": "How AI is pushing satellites to evolve",
+      "url": "https://spacenews.com/how-ai-is-pushing-satellites-to-evolve/",
+      "source": "SpaceNews",
+      "published_at": "2026-11-17T17:02:33Z",
+      "added_at": "2026-11-19T04:35:13Z"
+    },
+    {
       "title": "▶️ We (Finally) Have Our New James Bond!",
       "url": "https://www.youtube.com/watch?v=i9IJlL-71k0",
       "source": "YouTube · The Critical Drinker (Will Jordan)",
@@ -191,18 +205,18 @@
       "added_at": "2026-11-18T02:04:46Z"
     },
     {
-      "title": "Malaysia-Taiwan: Anwar’s China line triggers a quiet investment freeze",
-      "url": "https://www.lowyinstitute.org/the-interpreter/malaysia-taiwan-anwar-s-china-line-triggers-a-quiet-investment-freeze",
-      "source": "Lowy Institute",
-      "published_at": "2026-11-17T16:00:00Z",
-      "added_at": "2026-11-18T02:04:46Z"
+      "title": "How should armies fight?",
+      "url": "https://www.worksinprogress.news/p/how-should-armies-fight",
+      "source": "Works in Progress",
+      "published_at": "2026-11-17T14:59:30Z",
+      "added_at": "2026-11-19T04:35:13Z"
     },
     {
-      "title": "The Language of Gender Diversity in Zulu",
-      "url": "https://daily.jstor.org/the-language-of-gender-diversity-in-zulu/",
-      "source": "JSTOR Daily",
-      "published_at": "2026-11-17T14:27:20Z",
-      "added_at": "2026-11-18T02:04:46Z"
+      "title": "The Devils and the Liturgy of Liberalism",
+      "url": "https://firstthings.com/the-devils-and-the-liturgy-of-liberalism/",
+      "source": "First Things",
+      "published_at": "2026-11-17T14:51:17Z",
+      "added_at": "2026-11-19T04:35:13Z"
     },
     {
       "title": "Quad Moves to Counter China’s Mineral Monopoly",
@@ -219,17 +233,17 @@
       "added_at": "2026-11-18T02:04:46Z"
     },
     {
+      "title": "The Forgotten Socialist",
+      "url": "https://www.compactmag.com/article/the-forgotten-socialist/",
+      "source": "Compact",
+      "published_at": "2026-11-17T12:44:02Z",
+      "added_at": "2026-11-19T02:10:57Z"
+    },
+    {
       "title": "BIS Takes on Compute Leakage",
       "url": "https://www.chinatalk.media/p/bis-finally-takes-a-stand",
       "source": "ChinaTalk",
       "published_at": "2026-11-17T11:03:33Z",
-      "added_at": "2026-11-18T02:04:46Z"
-    },
-    {
-      "title": "The biggest myth about American immigration policy",
-      "url": "https://www.slowboring.com/p/the-biggest-myth-about-american-immigration",
-      "source": "Slow Boring",
-      "published_at": "2026-11-17T11:03:20Z",
       "added_at": "2026-11-18T02:04:46Z"
     },
     {
@@ -268,20 +282,6 @@
       "added_at": "2026-11-18T02:04:46Z"
     },
     {
-      "title": "The AI consciousness debate is a red herring",
-      "url": "https://www.lesswrong.com/posts/i76GuXDvGcbC7oWcb/the-ai-consciousness-debate-is-a-red-herring",
-      "source": "LessWrong",
-      "published_at": "2026-11-17T00:35:40Z",
-      "added_at": "2026-11-17T02:04:00Z"
-    },
-    {
-      "title": "New “Central Dogma of Aging” Highlights the Complexity of Getting Older",
-      "url": "https://nautil.us/new-central-dogma-of-aging-highlights-the-complexity-of-getting-older-1286682/",
-      "source": "Nautilus",
-      "published_at": "2026-11-17T00:30:00Z",
-      "added_at": "2026-11-17T02:04:00Z"
-    },
-    {
       "title": "The curious cult of King Æthelstan",
       "url": "https://unherd.com/2026/11/the-curious-cult-of-king-athelstan/",
       "source": "UnHerd",
@@ -289,11 +289,11 @@
       "added_at": "2026-11-17T02:04:00Z"
     },
     {
-      "title": "Here's How The Boeing 757-300 Protects Its Ultra-Long Fuselage On Rotation In The Cockpit & Externally",
-      "url": "https://simpleflying.com/how-boeing-757-300-protects-ultra-long-fuselage-rotation-cockpit-externally/",
-      "source": "Simple Flying",
-      "published_at": "2026-11-16T22:00:18Z",
-      "added_at": "2026-11-17T02:04:00Z"
+      "title": "Marginal Grains",
+      "url": "https://asteriskmag.com/issues/16/marginal-grains",
+      "source": "Asterisk",
+      "published_at": "2026-11-17T00:00:00Z",
+      "added_at": "2026-11-19T04:35:13Z"
     },
     {
       "title": "Sauternes and Barsac Rewrite Their Story",
@@ -303,11 +303,11 @@
       "added_at": "2026-11-17T02:04:00Z"
     },
     {
-      "title": "▶️ The Drinker Recommends... I Play Rocky",
-      "url": "https://www.youtube.com/watch?v=GfR0Dja36Cg",
-      "source": "YouTube · The Critical Drinker (Will Jordan)",
-      "published_at": "2026-11-16T17:00:07Z",
-      "added_at": "2026-11-17T02:04:00Z"
+      "title": "What Makes Up the Cosmos? A 20-Year Survey Hints That Something Is Missing.",
+      "url": "https://www.quantamagazine.org/what-makes-up-the-cosmos-a-20-year-survey-hints-that-something-is-missing-20261116/",
+      "source": "Quanta Magazine",
+      "published_at": "2026-11-16T15:15:33Z",
+      "added_at": "2026-11-19T02:10:57Z"
     },
     {
       "title": "▶️ The Wisdom of Montaigne (with Tyler Cowen)",
