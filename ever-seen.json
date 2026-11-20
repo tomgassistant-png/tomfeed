@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T04:39:32Z",
+  "updated_at": "2026-11-20T02:02:43Z",
   "urls": {
     "https://19.bbk.ac.uk/article/id/1717": {
       "first_seen_at": "2026-10-26T02:05:43Z"
@@ -261,6 +261,9 @@
     },
     "https://arstechnica.com/space/2026/10/spacex-will-attempt-to-reach-weekly-starship-launches-by-early-2027": {
       "first_seen_at": "2026-10-23T02:05:12Z"
+    },
+    "https://arstechnica.com/space/2026/11/to-make-moon-landings-easier-nasa-is-making-life-harder-for-orion/": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
     },
     "https://asiatimes.com/2026/10/us-reinvents-rare-earth-refining-as-china-guards-know-how": {
       "first_seen_at": "2026-10-28T02:04:44Z"
@@ -1357,8 +1360,14 @@
     "https://engelsbergideas.com/notebook/gilgamesh-reborn/": {
       "first_seen_at": "2026-11-09T02:16:52Z"
     },
+    "https://engelsbergideas.com/notebook/the-bankers-of-christendom/": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
+    },
     "https://engelsbergideas.com/reviews/sakis-two-selves/": {
       "first_seen_at": "2026-11-09T02:16:52Z"
+    },
+    "https://engelsbergideas.com/reviews/van-eyck-face-to-face/": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
     },
     "https://english.elpais.com/science-tech/2026-10-05/the-dark-side-of-starships-success-musk-sidelines-nasa-in-his-bid-to-dominate-space.html": {
       "first_seen_at": "2026-10-22T02:06:47Z"
@@ -1675,6 +1684,9 @@
     "https://hannahspier.substack.com/p/100-why-psychiatry-refuses-to-call": {
       "first_seen_at": "2026-11-06T02:00:13Z"
     },
+    "https://hannahspier.substack.com/p/104-the-feminist-bias-in-social-work": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
+    },
     "https://hannahspier.substack.com/p/83-how-we-trained-girls-for-conflict": {
       "first_seen_at": "2026-08-14T05:04:47Z"
     },
@@ -1746,6 +1758,9 @@
     },
     "https://hannahspier.substack.com/p/the-cost-of-teaching-girls-that-assertiveness": {
       "first_seen_at": "2026-08-14T05:04:47Z"
+    },
+    "https://hannahspier.substack.com/p/the-feminist-bias-in-social-work": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
     },
     "https://hannahspier.substack.com/p/the-new-feminist-buzzwords-you-need": {
       "first_seen_at": "2026-08-28T03:33:59Z"
@@ -5476,6 +5491,9 @@
     "https://marginalrevolution.com/marginalrevolution/2026/10/will-bystander-economies-be-able-to-finance-their-governments.html": {
       "first_seen_at": "2026-10-24T04:56:39Z"
     },
+    "https://marginalrevolution.com/marginalrevolution/2026/11/the-anthropic-ipo.html": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
+    },
     "https://markaicode.com/architecture/local-ai-agent-architecture": {
       "first_seen_at": "2026-09-27T02:04:38Z"
     },
@@ -5677,6 +5695,9 @@
     "https://nautil.us/nasa-is-counting-down-to-the-launch-of-the-nancy-grace-roman-space-telescope-1284513": {
       "first_seen_at": "2026-09-04T03:25:05Z"
     },
+    "https://nautil.us/the-everlasting-life-of-maxwells-demon-1286802/": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
+    },
     "https://nautil.us/the-moon-may-have-been-created-in-just-five-hours-1284952": {
       "first_seen_at": "2026-09-12T03:45:22Z"
     },
@@ -5694,6 +5715,9 @@
     },
     "https://newarab.com/analysis/israels-occupation-hezbollahs-arms-looming-war-lebanon": {
       "first_seen_at": "2026-10-23T02:05:12Z"
+    },
+    "https://newcriterion.com/dispatch/janacek-done-justice/": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
     },
     "https://newlinesmag.com/essays/a-rupture-in-the-history-of-consciousness": {
       "first_seen_at": "2026-10-12T02:04:34Z"
@@ -5892,6 +5916,9 @@
     },
     "https://newsletter.amitsegal.net/p/its-noon-in-israel-trump-strikes": {
       "first_seen_at": "2026-11-04T02:00:15Z"
+    },
+    "https://newsletter.amitsegal.net/p/its-noon-in-israel-trump-warns-iran": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
     },
     "https://newsletter.amitsegal.net/p/its-noon-in-israel-unfortunate-sons": {
       "first_seen_at": "2026-09-25T04:23:26Z"
@@ -6955,6 +6982,9 @@
     "https://spacenews.com/the-space-nuclear-nexus-is-a-symptom-of-arms-control-failure": {
       "first_seen_at": "2026-09-05T04:00:11Z"
     },
+    "https://spacenews.com/the-sweet-spot-for-constellation-size/": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
+    },
     "https://spacenews.com/the-u-s-already-oversees-commercial-space-novelty-is-not-a-regulatory-gap": {
       "first_seen_at": "2026-10-11T02:05:21Z"
     },
@@ -7375,6 +7405,9 @@
     "https://theconversation.com/victorian-spiritualism-capitalised-on-the-desire-to-transcend-death-to-create-new-ways-of-making-money-294302": {
       "first_seen_at": "2026-10-27T02:05:12Z"
     },
+    "https://thecritic.co.uk/the-meaning-of-genocide/": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
+    },
     "https://thediplomat.com/2026/09/latin-americas-china-dilemma-lessons-from-peru-and-colombias-presidential-elections": {
       "first_seen_at": "2026-09-15T16:02:16Z"
     },
@@ -7657,11 +7690,26 @@
     "https://wwfm.org/show/the-piano-matters-with-david-dubal/2026-11-04/the-piano-matters-oct-28": {
       "first_seen_at": "2026-11-05T02:00:27Z"
     },
+    "https://www.astralcodexten.com/p/the-ai-forecasting-agenda": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
+    },
     "https://www.astralcodexten.com/p/your-book-review-orality-and-literacy": {
       "first_seen_at": "2026-11-09T02:16:52Z"
     },
+    "https://www.biblicalarchaeology.org/daily/biblical-topics/bible-interpretation/when-did-monotheism-emerge-in-ancient-israel/": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
+    },
+    "https://www.biblicalarchaeology.org/daily/biblical-topics/hebrew-bible/balaam-part-one/": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
+    },
+    "https://www.bronzeagepervert.yoga/p/episode-228-claude-levi-strauss": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
+    },
     "https://www.chinatalk.media/p/china-in-the-cyberpocalypse": {
       "first_seen_at": "2026-11-09T02:16:52Z"
+    },
+    "https://www.chinatalk.media/p/new-congress-new-rare-earths-policy": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
     },
     "https://www.interconnects.ai/p/how-well-can-we-measure-open-model": {
       "first_seen_at": "2026-11-09T02:16:52Z"
@@ -7669,14 +7717,29 @@
     "https://www.jancisrobinson.com/articles/caino-blanco-king-almost-disappeared": {
       "first_seen_at": "2026-11-09T02:16:52Z"
     },
+    "https://www.lowyinstitute.org/the-interpreter/the-yttrium-squeeze-how-a-little-known-rare-earth-became-china-s-latest-geopolitical-lever": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
+    },
     "https://www.noahpinion.blog/p/why-im-becoming-a-china-bear": {
       "first_seen_at": "2026-11-09T02:16:52Z"
     },
     "https://www.noemamag.com/building-the-new-equilibrium-economy": {
       "first_seen_at": "2026-11-09T02:16:52Z"
     },
+    "https://www.persuasion.community/p/is-pangram-racist-the-data-says-probably": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
+    },
     "https://www.quantamagazine.org/new-research-tests-whether-ai-models-know-their-own-thoughts-20261104/": {
       "first_seen_at": "2026-11-09T02:16:52Z"
+    },
+    "https://www.theintrinsicperspective.com/p/the-moral-mandate-for-ai-non-consciousness": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
+    },
+    "https://www.worksinprogress.news/p/sichuan-and-the-sun-belt": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
+    },
+    "https://www.worksinprogress.news/p/the-trouble-with-serendipity": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
     },
     "https://www.ynet.co.il/yedioth/article/yokra14949804": {
       "first_seen_at": "2026-11-09T02:16:52Z"
@@ -7854,6 +7917,9 @@
     },
     "https://x.com/realErikDPrince/status/2118822389450465358": {
       "first_seen_at": "2026-11-07T02:00:41Z"
+    },
+    "https://x.com/realErikDPrince/status/2123390813061185934": {
+      "first_seen_at": "2026-11-20T02:02:43Z"
     },
     "https://yalebooks.yale.edu/2026/09/09/what-do-the-dead-sea-scrolls-really-prove": {
       "first_seen_at": "2026-10-04T02:19:20Z"
