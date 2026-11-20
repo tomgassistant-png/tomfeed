@@ -50,6 +50,7 @@ Fixed sources. Check these every refresh; do not leave them to general search al
 | MTS (Monitoring the Situation) | https://mtslive.substack.com/feed | **Max 1** — newest only |
 | Theo Jaffee | https://www.theojaffee.com/feed | Recent public posts |
 | Effort | https://www.effort.news/feed.xml | Every recent item (no tip cap) |
+| A Reader's Asylum (Leafwhelmed blog) | https://leafwhelmed.wordpress.com/ (RSS: https://leafwhelmed.wordpress.com/feed/) | Every new post, once each (normal ever-seen dedupe; never repeat). Link to the post's own page. Posts are infrequent; never backfill older posts (the Nov 8, 2026 post 'The Wreck of the Edmund Fitzgerald and The Last Light on Lake Superior' and earlier count as already seen, so add their URLs to nothing and do not post them). |
 
 ### Podcast / radio
 
