@@ -1,19 +1,124 @@
 {
-  "generated_at": "2026-11-22 02:08 UTC",
+  "generated_at": "2026-11-23 02:04 UTC",
   "items": [
     {
-      "title": "☁️ Herzliya: Cloudy, 19°C now (19–23°C today)",
+      "title": "⛅ Herzliya: Partly Cloudy, 18°C now (17–22°C today)",
       "url": "https://wttr.in/Herzliya",
       "source": "wttr.in",
-      "published_at": "2026-11-22T02:08:25Z",
-      "added_at": "2026-11-22T02:08:25Z"
+      "published_at": "2026-11-23T02:04:13Z",
+      "added_at": "2026-11-23T02:04:13Z"
     },
     {
-      "title": "📈 S&P 500 6,910.39 (-3.70%) · Nasdaq 22,617.73 (-5.28%) · SPCX $127.79 (-7.69%) · NVDA $125.53 (-14.01%) · WTI $83.41 (+1.18%) · USD/ILS ₪3.355",
+      "title": "📈 S&P 500 6,910.39 (-3.70%) · Nasdaq 22,617.73 (-5.28%) · SPCX $127.79 (-7.69%) · NVDA $125.53 (-14.01%) · WTI $83.24 (-0.20%) · USD/ILS ₪3.345",
       "url": "https://finance.yahoo.com/quote/%5EGSPC",
       "source": "Yahoo Finance",
-      "published_at": "2026-11-22T02:08:25Z",
-      "added_at": "2026-11-22T02:08:25Z"
+      "published_at": "2026-11-23T02:04:13Z",
+      "added_at": "2026-11-23T02:04:13Z"
+    },
+    {
+      "title": "The Mizrahis will own Israel",
+      "url": "https://unherd.com/2026/11/the-mizrahis-will-inherit-israel/",
+      "source": "UnHerd",
+      "published_at": "2026-11-23T00:02:11Z",
+      "added_at": "2026-11-23T02:04:13Z"
+    },
+    {
+      "title": "How Pacific Islands are right-sizing Chinese policing",
+      "url": "https://www.lowyinstitute.org/the-interpreter/how-pacific-islands-are-right-sizing-chinese-policing",
+      "source": "Lowy Institute",
+      "published_at": "2026-11-22T23:00:00Z",
+      "added_at": "2026-11-23T02:04:13Z"
+    },
+    {
+      "title": "Tralatitions.",
+      "url": "https://languagehat.com/tralatitions/",
+      "source": "Languagehat",
+      "published_at": "2026-11-22T22:11:21Z",
+      "added_at": "2026-11-23T02:04:13Z"
+    },
+    {
+      "title": "Here’s Why The Boeing 777X Won’t Let Pilots Take Off With Its Wings Still Folded",
+      "url": "https://simpleflying.com/boeing-777x-wont-let-pilots-takeoff-wings-folded/",
+      "source": "Simple Flying",
+      "published_at": "2026-11-22T21:19:41Z",
+      "added_at": "2026-11-23T02:04:13Z"
+    },
+    {
+      "title": "The altogether scandalous Mouton Rothschild 1924 label",
+      "url": "https://janeanson.com/the-altogether-scandalous-mouton-rothschild-1924-label",
+      "source": "Jane Anson",
+      "published_at": "2026-11-22T21:04:27Z",
+      "added_at": "2026-11-23T02:04:13Z"
+    },
+    {
+      "title": "Week In Review 11/22: The Holy Grail of Mathematics",
+      "url": "https://mtslive.substack.com/p/week-in-review-1122-the-holy-grail",
+      "source": "Substack · MTS",
+      "published_at": "2026-11-22T19:09:18Z",
+      "added_at": "2026-11-23T02:04:13Z"
+    },
+    {
+      "title": "The Chopin I Love: Peter Donohoe’s Personal Chopin Album",
+      "url": "https://interlude.hk/peter-donohoe-and-chopin/",
+      "source": "Interlude",
+      "published_at": "2026-11-22T16:15:20Z",
+      "added_at": "2026-11-23T02:04:13Z"
+    },
+    {
+      "title": "Manuel de Falla at 150: How Spain Is Celebrating",
+      "url": "https://interlude.hk/manuel-de-falla-at-150-born-on-november-23-1876-spain-celebrates-a-musical-landmark/",
+      "source": "Interlude",
+      "published_at": "2026-11-22T16:13:55Z",
+      "added_at": "2026-11-23T02:04:13Z"
+    },
+    {
+      "title": "The Fortunes of a Dim Sun",
+      "url": "https://nautil.us/the-fortunes-of-a-dim-sun-1286898/",
+      "source": "Nautilus",
+      "published_at": "2026-11-22T15:00:00Z",
+      "added_at": "2026-11-23T02:04:13Z"
+    },
+    {
+      "title": "The Rise and Fall of the Telephone Century",
+      "url": "https://www.theatlantic.com/magazine/2027/01/james-gleick-telephone-new-history-review/689413/",
+      "source": "The Atlantic",
+      "published_at": "2026-11-22T14:00:00Z",
+      "added_at": "2026-11-23T02:04:13Z"
+    },
+    {
+      "title": "It’s Noon in Israel: Israel Is Running Out of Time in Gaza",
+      "url": "https://newsletter.amitsegal.net/p/its-noon-in-israel-israel-is-running",
+      "source": "Substack · It's Noon In Israel",
+      "published_at": "2026-11-22T12:04:11Z",
+      "added_at": "2026-11-23T02:04:13Z"
+    },
+    {
+      "title": "The Role of AI in Enforcing China’s Ethnic Unity Law",
+      "url": "https://www.chinatalk.media/p/the-role-of-ai-in-enforcing-chinas",
+      "source": "ChinaTalk",
+      "published_at": "2026-11-22T11:38:55Z",
+      "added_at": "2026-11-23T02:04:13Z"
+    },
+    {
+      "title": "Should a winery have a restaurant?",
+      "url": "https://www.jancisrobinson.com/articles/should-winery-have-restaurant",
+      "source": "Jancis Robinson",
+      "published_at": "2026-11-22T08:45:00Z",
+      "added_at": "2026-11-23T02:04:13Z"
+    },
+    {
+      "title": "AI people are very, very, very, very rich",
+      "url": "https://www.noahpinion.blog/p/ai-people-are-very-very-very-very",
+      "source": "Noahpinion",
+      "published_at": "2026-11-22T06:27:25Z",
+      "added_at": "2026-11-23T02:04:13Z"
+    },
+    {
+      "title": "The roots of the Suez Crisis",
+      "url": "https://thecritic.co.uk/the-roots-of-the-suez-crisis/",
+      "source": "The Critic",
+      "published_at": "2026-11-22T02:00:33Z",
+      "added_at": "2026-11-23T02:04:13Z"
     },
     {
       "title": "A Chip on His Shoulder.",
@@ -44,6 +149,13 @@
       "added_at": "2026-11-22T02:08:25Z"
     },
     {
+      "title": "Camilla Cavendish on Why Falling Birth Rates Aren't a Feminist Success Story",
+      "url": "https://www.persuasion.community/p/camilla-cavendish",
+      "source": "Persuasion",
+      "published_at": "2026-11-21T11:01:57Z",
+      "added_at": "2026-11-23T02:04:13Z"
+    },
+    {
       "title": "Reading in Reverse",
       "url": "https://www.newyorker.com/culture/the-weekend-essay/reading-in-reverse",
       "source": "The New Yorker",
@@ -63,6 +175,13 @@
       "source": "Jancis Robinson",
       "published_at": "2026-11-21T01:00:00Z",
       "added_at": "2026-11-22T02:08:25Z"
+    },
+    {
+      "title": "AI will create a new mental elite",
+      "url": "https://unherd.com/2026/11/ai-will-create-a-new-mental-elite/",
+      "source": "UnHerd",
+      "published_at": "2026-11-21T00:04:15Z",
+      "added_at": "2026-11-23T02:04:13Z"
     },
     {
       "title": "Collections: On the ‘Sullan Republic’",
@@ -128,6 +247,13 @@
       "added_at": "2026-11-22T02:08:25Z"
     },
     {
+      "title": "How the Campaign Against Israel Rewrote the Law of Genocide",
+      "url": "https://www.thefp.com/p/icj-genocide-israel-myanmar",
+      "source": "The Free Press",
+      "published_at": "2026-11-20T16:56:49Z",
+      "added_at": "2026-11-23T02:04:13Z"
+    },
+    {
       "title": "Robots Still Suck",
       "url": "https://www.chinatalk.media/p/we-went-to-austin-to-see-robots",
       "source": "ChinaTalk",
@@ -170,13 +296,6 @@
       "added_at": "2026-11-21T02:06:55Z"
     },
     {
-      "title": "It’s Noon in Israel: Israel Needs a New Story",
-      "url": "https://newsletter.amitsegal.net/p/its-noon-in-israel-israel-needs-a",
-      "source": "Substack · It's Noon In Israel",
-      "published_at": "2026-11-20T12:02:07Z",
-      "added_at": "2026-11-21T02:06:55Z"
-    },
-    {
       "title": "▶️ Democrats Trojan Horse Midterm",
       "url": "https://www.youtube.com/watch?v=y8O6QmcmPVk",
       "source": "YouTube · Peter St. Onge",
@@ -190,6 +309,13 @@
       "source": "Aeon",
       "published_at": "2026-11-20T11:00:00Z",
       "added_at": "2026-11-21T02:06:55Z"
+    },
+    {
+      "title": "The Impish Faxes Between Janet Malcolm and Philip Roth",
+      "url": "https://www.newyorker.com/books/page-turner/the-impish-faxes-between-janet-malcolm-and-philip-roth",
+      "source": "The New Yorker",
+      "published_at": "2026-11-20T11:00:00Z",
+      "added_at": "2026-11-23T02:04:13Z"
     },
     {
       "title": "Does it really matter if there’s an intelligence explosion?",
@@ -211,135 +337,9 @@
       "source": "Literary Hub",
       "published_at": "2026-11-20T08:45:25Z",
       "added_at": "2026-11-22T02:08:25Z"
-    },
-    {
-      "title": "America’s Nuclear Renaissance",
-      "url": "https://www.city-journal.org/article/nuclear-power-atomic-energy-artificial-intelligence",
-      "source": "City Journal",
-      "published_at": "2026-11-20T08:00:00Z",
-      "added_at": "2026-11-22T02:08:25Z"
-    },
-    {
-      "title": "Himalayan journey, Victorian sex life, the prime minister who couldn’t stop reading, the greatest crossover event in podcasting history?",
-      "url": "https://jmarriott.substack.com/p/himalayan-journey-victorian-sex-life",
-      "source": "Substack · Cultural Capital",
-      "published_at": "2026-11-20T06:30:56Z",
-      "added_at": "2026-11-21T02:06:55Z"
-    },
-    {
-      "title": "Who commands, who answers? The legal accountability of foreign police in the Pacific",
-      "url": "https://www.lowyinstitute.org/the-interpreter/who-commands-who-answers-the-legal-accountability-of-foreign-police-in-the-pacific",
-      "source": "Lowy Institute",
-      "published_at": "2026-11-20T01:00:00Z",
-      "added_at": "2026-11-22T02:08:25Z"
-    },
-    {
-      "title": "Pangram Isn’t Racist",
-      "url": "https://www.persuasion.community/p/is-pangram-racist-the-data-says-probably",
-      "source": "Persuasion",
-      "published_at": "2026-11-20T00:12:22Z",
-      "added_at": "2026-11-20T02:02:43Z"
-    },
-    {
-      "title": "Jensen’s Path Back to Nvidia CEO",
-      "url": "https://www.effort.news/jensen",
-      "source": "Effort",
-      "published_at": "2026-11-20T00:00:00Z",
-      "added_at": "2026-11-21T02:06:55Z"
-    },
-    {
-      "title": "The Nvidia Board Removed Jensen on False Pretenses",
-      "url": "https://www.effort.news/nvidia",
-      "source": "Effort",
-      "published_at": "2026-11-20T00:00:00Z",
-      "added_at": "2026-11-21T02:06:55Z"
-    },
-    {
-      "title": "The yttrium squeeze: How a little-known rare earth became China’s latest geopolitical lever",
-      "url": "https://www.lowyinstitute.org/the-interpreter/the-yttrium-squeeze-how-a-little-known-rare-earth-became-china-s-latest-geopolitical-lever",
-      "source": "Lowy Institute",
-      "published_at": "2026-11-19T23:00:00Z",
-      "added_at": "2026-11-20T02:02:43Z"
-    },
-    {
-      "title": "Wihio.",
-      "url": "https://languagehat.com/wihio/",
-      "source": "Languagehat",
-      "published_at": "2026-11-19T21:02:48Z",
-      "added_at": "2026-11-21T02:06:55Z"
-    },
-    {
-      "title": "The AI Forecasting Agenda",
-      "url": "https://www.astralcodexten.com/p/the-ai-forecasting-agenda",
-      "source": "Astral Codex Ten",
-      "published_at": "2026-11-19T20:29:45Z",
-      "added_at": "2026-11-20T02:02:43Z"
-    },
-    {
-      "title": "The Godless New Christian Right",
-      "url": "https://firstthings.com/the-godless-new-christian-right/",
-      "source": "First Things",
-      "published_at": "2026-11-19T18:42:58Z",
-      "added_at": "2026-11-22T02:08:25Z"
-    },
-    {
-      "title": "The sweet spot for constellation size",
-      "url": "https://spacenews.com/the-sweet-spot-for-constellation-size/",
-      "source": "SpaceNews",
-      "published_at": "2026-11-19T17:25:17Z",
-      "added_at": "2026-11-20T02:02:43Z"
-    },
-    {
-      "title": "EPISODE 228: CLAUDE LEVI-STRAUSS",
-      "url": "https://www.bronzeagepervert.yoga/p/episode-228-claude-levi-strauss",
-      "source": "Substack · Magenta Notebooks",
-      "published_at": "2026-11-19T15:44:39Z",
-      "added_at": "2026-11-20T02:02:43Z"
-    },
-    {
-      "title": "Making the case for optical",
-      "url": "https://spacenews.com/making-the-case-for-optical/",
-      "source": "SpaceNews",
-      "published_at": "2026-11-19T15:38:18Z",
-      "added_at": "2026-11-21T02:06:55Z"
-    },
-    {
-      "title": "The bankers of Christendom",
-      "url": "https://engelsbergideas.com/notebook/the-bankers-of-christendom/",
-      "source": "Engelsberg Ideas",
-      "published_at": "2026-11-19T15:16:24Z",
-      "added_at": "2026-11-20T02:02:43Z"
-    },
-    {
-      "title": "The Everlasting Life of Maxwell’s Demon",
-      "url": "https://nautil.us/the-everlasting-life-of-maxwells-demon-1286802/",
-      "source": "Nautilus",
-      "published_at": "2026-11-19T15:00:00Z",
-      "added_at": "2026-11-20T02:02:43Z"
-    },
-    {
-      "title": "Neither America nor Iran has the means to end the war",
-      "url": "https://www.economist.com/middle-east-and-africa/2026/11/19/neither-america-nor-iran-has-the-means-to-end-the-war",
-      "source": "The Economist",
-      "published_at": "2026-11-19T14:01:02Z",
-      "added_at": "2026-11-22T02:08:25Z"
-    },
-    {
-      "title": "The End Of Extraction",
-      "url": "https://www.noemamag.com/the-end-of-extraction",
-      "source": "Noema",
-      "published_at": "2026-11-19T13:54:19Z",
-      "added_at": "2026-11-22T02:08:25Z"
-    },
-    {
-      "title": "NASA's new Moon plans have a problem: Orion wasn't designed to fly this way",
-      "url": "https://arstechnica.com/space/2026/11/to-make-moon-landings-easier-nasa-is-making-life-harder-for-orion/",
-      "source": "Ars Technica",
-      "published_at": "2026-11-19T13:40:02Z",
-      "added_at": "2026-11-20T02:02:43Z"
     }
   ],
   "_meta": {
-    "last_updated": "2026-11-22T02:08:25Z"
+    "last_updated": "2026-11-23T02:04:13Z"
   }
 }
