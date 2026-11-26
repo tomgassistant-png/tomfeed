@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T04:58:59Z",
+  "updated_at": "2026-11-26T05:05:29Z",
   "urls": {
     "https://19.bbk.ac.uk/article/id/1717": {
       "first_seen_at": "2026-10-26T02:05:43Z"
@@ -9492,6 +9492,18 @@
     },
     "https://www.newyorker.com/books/page-turner/the-impish-faxes-between-janet-malcolm-and-philip-roth": {
       "first_seen_at": "2026-11-23T02:04:13Z"
+    },
+    "https://www.astralcodexten.com/p/anima-bicameral": {
+      "first_seen_at": "2026-11-26T05:05:29Z"
+    },
+    "https://www.jancisrobinson.com/articles/wind-wine-field-guide": {
+      "first_seen_at": "2026-11-26T05:05:29Z"
+    },
+    "https://www.worksinprogress.news/p/how-to-make-a-lovable-city": {
+      "first_seen_at": "2026-11-26T05:05:29Z"
+    },
+    "https://unherd.com/2026/11/why-europe-is-bunkering-down/": {
+      "first_seen_at": "2026-11-26T05:05:29Z"
     }
   }
 }
